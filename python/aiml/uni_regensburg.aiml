@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category>
+	<pattern>HALLO</pattern>
+	<template>
+		<random>
+			<li>Grüß Gott, mein Name ist Elies. Ich bin ein Chatbot, der etwas über das Studim an der Uni Regensburg weiss.</li>
+			<li>Hallo, ich bin Elies. Möchtest du etwas über Medieninformatik oder Informationswissenschaft erfahren?</li>
+			<li>Hallo. Kann ich dir weiterhelfen? Ich kenne mich mit Medieninformatik- und Informationswissenschaftsstudium aus.</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>HALLO *</pattern>
+	<template>
+		<srai>hallo</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>KANN ICH * ALS HAUPTFACH STUDIEREN</pattern>
+	<template>prolog "major('<star />',X),halt"</template>
+</category>
+
+<category>
+	<pattern>WER HÄLT DEN * KURS</pattern>
+	<template>prolog "lecturer('<star />',X),halt"</template>
+</category>
+
+
+</aiml>
