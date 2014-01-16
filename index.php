@@ -5,7 +5,6 @@
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/elies.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Exo+2:200,400' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="web.css">
 	</head>
 

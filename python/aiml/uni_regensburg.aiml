@@ -5,9 +5,9 @@
 	<pattern>HALLO</pattern>
 	<template>
 		<random>
-			<li>Grüß Gott, mein Name ist Elies. Ich bin ein Chatbot, der etwas über das Studim an der Uni Regensburg weiss.</li>
-			<li>Hallo, ich bin Elies. Möchtest du etwas über Medieninformatik oder Informationswissenschaft erfahren?</li>
-			<li>Hallo. Kann ich dir weiterhelfen? Ich kenne mich mit Medieninformatik- und Informationswissenschaftsstudium aus.</li>
+			<li>Grüß Gott, mein Name ist Elies. Ich bin ein Chatbot, der etwas über das Studim an der Uni Regensburg weiß.</li>
+			<li>Hallo, ich bin Elies. Möchtest du etwas über die Medieninformatik oder Informationswissenschaft erfahren?</li>
+			<li>Hallo. Kann ich dir weiterhelfen? Ich kenne mich mit dem Medieninformatik- und Informationswissenschaftsstudium aus.</li>
 		</random>
 	</template>
 </category>
@@ -21,13 +21,39 @@
 
 <category>
 	<pattern>KANN ICH * ALS HAUPTFACH STUDIEREN</pattern>
-	<template>prolog "major('<star />',X),halt"</template>
+	<template>prolog major "major('<star />',X),halt"</template>
 </category>
 
 <category>
 	<pattern>WER HÄLT DEN * KURS</pattern>
-	<template>prolog "lecturer('<star />',X),halt"</template>
+	<template>prolog lecturer "lecturer('<star />',X),halt"</template>
 </category>
 
+<category>
+	<pattern>WELCHE KURSE GIBT ES DIESES SEMESTER</pattern>
+	<template>Für welches Fach soll ich dir die aktuellen Kurse zeigen?</template>
+</category>
+
+<category>
+	<pattern>WELCHE KURSE WERDEN DIESES SEMESTER ANGEBOTEN</pattern>
+	<template>
+		<srai>WELCHE KURSE GIBT ES DIESES SEMESTER</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>INFORMATIONSWISSENSCHAFT</pattern>
+	<this>Für welches Fach soll ich dir die aktuellen Kurse zeigen?</this>
+	<template>prolog courses "findAllCurrentCourses('infv',X),halt"</template>
+</category>
+
+
+
+<category>
+	<pattern>WER IST DER * DOZENT</pattern>
+	<template>
+		<srai>WER HÄLT DEN <star/> KURS</srai>
+	</template>
+</category>
 
 </aiml>

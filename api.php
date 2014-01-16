@@ -33,8 +33,12 @@
 	function ask_prolog($request)
 	{
 		$parts = explode(" ", $request);
-		$result = shell_exec('/opt/local/bin/swipl -f ./prolog/facts/mi_iw.pl -g '.$parts[1].' 2>&1');
-		return $result;
+		$result = shell_exec('/opt/local/bin/swipl -f ./prolog/facts/mi_iw.pl -g '.$parts[2].' 2>&1');
+		if($parts[1] == "courses") {
+			return "Folgende Kurse werden angeboten: ".substr($result, 0, -2).".";
+		} else {
+			return $result;
+		}
 	}
 	
 ?>
