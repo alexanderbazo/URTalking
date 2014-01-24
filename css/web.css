@@ -56,14 +56,13 @@ body #output::-webkit-scrollbar-track {
 	background: rgb(30,30,30);
 }
 
-::-webkit-scrollbar-thumb {
+body #output::-webkit-scrollbar-thumb {
     background: rgba(255,46,157,0.8);
 }
 
-::-webkit-scrollbar-thumb:window-inactive {
+body #output::-webkit-scrollbar-thumb:window-inactive {
 	background: rgb(30,30,30);
 }
-
 
 
 body #output .line {
@@ -102,11 +101,44 @@ body input {
 	border-width:2px;
 	border-color:rgb(30,30,30);
 	
-	
 	font-family: 'Exo-400', sans-serif;
 	font-size:20px;
 	line-height:20px;
 	color:rgb(30,30,30);
+}
+
+body #course_info {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:300px;
+	padding:3px;
+
+	background-color:rgba(30,30,30,0.8);
+}
+
+body .hidden {
+	visibility:hidden;
+}
+
+body #course_info h1 {
+	width:286px;
+	margin:0px;
+	background-color:rgba(30,30,30,0);
+
+	font-size:0.8em;
+	color:rgb(250,250,250);
+}
+
+body #course_info .course_nr {
+	color:rgb(255,46,157);
+	font-style:bold;
+}
+
+body #course_info .info {
+	display:block;
+	font-family: 'Exo-300', sans-serif;
+	color:rgb(250,250,250);
 }
 
 body footer {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 
+<!-- Smalltalk -->
 <category>
 	<pattern>HALLO</pattern>
 	<template>
@@ -19,19 +20,60 @@
 	</template>
 </category>
 
+<!-- Subjects -->
 <category>
 	<pattern>KANN ICH * ALS HAUPTFACH STUDIEREN</pattern>
 	<template>prolog major "major('<star />',X),halt"</template>
 </category>
 
+<!-- Lecturers -->
 <category>
 	<pattern>WER HÄLT DEN * KURS</pattern>
 	<template>prolog lecturer "lecturer('<star />',X),halt"</template>
 </category>
 
 <category>
+	<pattern>WER IST DER * DOZENT</pattern>
+	<template>
+		<srai>WER HÄLT DEN <star/> KURS</srai>
+	</template>
+</category>
+
+<!-- Module Description -->
+<category>
+	<pattern>WELCHE MODULE GIBT ES IN DER INFORMATIONSWISSENSCHAFT</pattern>
+	<template>prolog modules "findAllModules('inf',X),halt"</template>
+</category>
+
+<category>
+	<pattern>WELCHE MODULE GIBT ES IN DER MEDIENWISSENSCHAFT</pattern>
+	<template>prolog modules "findAllModules('med',X),halt"</template>
+</category>
+
+<category>
+	<pattern>WELCHE MODULE GIBT ES IN DER MEDIENINFORMATIK</pattern>
+	<template>prolog modules "findAllModules('mei',X),halt"</template>
+</category>
+
+<category>
+	<pattern>WELCHE MODULE GIBT ES</pattern>
+	<template>Fuer welches Fach soll ich dir die Module anzeigen</template>
+</category>
+
+<category>
+	<pattern>*</pattern>
+	<that>FUER WELCHES FACH SOLL ICH DIR DIE MODULE ANZEIGEN</that>
+	<template>
+		<srai>WELCHE MODULE GIBT ES IN DER <star/></srai>
+	</template>
+</category>
+
+
+
+<!-- Course Catalog -->
+<category>
 	<pattern>WELCHE KURSE GIBT ES DIESES SEMESTER</pattern>
-	<template>Für welches Fach soll ich dir die aktuellen Kurse zeigen?</template>
+	<template>Fuer welches Fach soll ich dir die aktuellen Kurse zeigen?</template>
 </category>
 
 <category>
@@ -43,17 +85,10 @@
 
 <category>
 	<pattern>INFORMATIONSWISSENSCHAFT</pattern>
-	<this>Für welches Fach soll ich dir die aktuellen Kurse zeigen?</this>
-	<template>prolog courses "findAllCurrentCourses('infv',X),halt"</template>
+	<that>FUER WELCHES FACH SOLL ICH DIR DIE AKTUELLEN KURSE ZEIGEN</that>
+	<template>prolog courses "findAllCurrentCourses('inf',X),halt"</template>
 </category>
 
-
-
-<category>
-	<pattern>WER IST DER * DOZENT</pattern>
-	<template>
-		<srai>WER HÄLT DEN <star/> KURS</srai>
-	</template>
-</category>
+<!-- -->
 
 </aiml>
