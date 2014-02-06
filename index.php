@@ -18,6 +18,9 @@
 		<footer>
 			Elise is great in helping new students. Currently she uses this <a href="./python/aiml/uni_regensburg.aiml" class="file_link" target="_new">AIML database</a> and these <a href="./prolog/facts/mi_iw.pl" class="file_link" target="_new">prolog facts</a> to answer your questions concering the study of media informatics and information sciene at the <a href="http://www.uni-regensburg.de" class="web_link" target="_new">University Regensburg</a>.
 		</footer>
+
+		<a href="admin.php" id="edit_aiml">Datenbasis bearbeiten</a>
+
 		<div id="course_info" class="hidden">
 			<h1><span class="course_nr">36554</span> <span class="title">Prolog</span></h1>
 			<span class="info">Lorem ipsum dolor sit</span>

@@ -2,7 +2,7 @@
 <aiml>
 
 <!-- Smalltalk -->
-<category>
+<category topic="Smalltalk">
 	<pattern>HALLO</pattern>
 	<template>
 		<random>
@@ -13,7 +13,7 @@
 	</template>
 </category>
 
-<category>
+<category topic="Smalltalk">
 	<pattern>HALLO *</pattern>
 	<template>
 		<srai>hallo</srai>
@@ -21,18 +21,18 @@
 </category>
 
 <!-- Subjects -->
-<category>
+<category topic="Fächer">
 	<pattern>KANN ICH * ALS HAUPTFACH STUDIEREN</pattern>
 	<template>prolog major "major('<star />',X),halt"</template>
 </category>
 
 <!-- Lecturers -->
-<category>
+<category topic="Dozenten">
 	<pattern>WER HÄLT DEN * KURS</pattern>
 	<template>prolog lecturer "lecturer('<star />',X),halt"</template>
 </category>
 
-<category>
+<category topic="Dozenten">
 	<pattern>WER IST DER * DOZENT</pattern>
 	<template>
 		<srai>WER HÄLT DEN <star/> KURS</srai>
@@ -40,27 +40,27 @@
 </category>
 
 <!-- Module Description -->
-<category>
+<category topic="Modulbeschreibung">
 	<pattern>WELCHE MODULE GIBT ES IN DER INFORMATIONSWISSENSCHAFT</pattern>
 	<template>prolog modules "findAllModules('inf',X),halt"</template>
 </category>
 
-<category>
+<category topic="Modulbeschreibung">
 	<pattern>WELCHE MODULE GIBT ES IN DER MEDIENWISSENSCHAFT</pattern>
 	<template>prolog modules "findAllModules('med',X),halt"</template>
 </category>
 
-<category>
+<category topic="Modulbeschreibung">
 	<pattern>WELCHE MODULE GIBT ES IN DER MEDIENINFORMATIK</pattern>
 	<template>prolog modules "findAllModules('mei',X),halt"</template>
 </category>
 
-<category>
+<category topic="Modulbeschreibung">
 	<pattern>WELCHE MODULE GIBT ES</pattern>
 	<template>Fuer welches Fach soll ich dir die Module anzeigen</template>
 </category>
 
-<category>
+<category topic="Modulbeschreibung">
 	<pattern>*</pattern>
 	<that>FUER WELCHES FACH SOLL ICH DIR DIE MODULE ANZEIGEN</that>
 	<template>
@@ -71,19 +71,19 @@
 
 
 <!-- Course Catalog -->
-<category>
+<category topic="Vorlesungsverzeichnis">
 	<pattern>WELCHE KURSE GIBT ES DIESES SEMESTER</pattern>
 	<template>Fuer welches Fach soll ich dir die aktuellen Kurse zeigen?</template>
 </category>
 
-<category>
+<category topic="Vorlesungsverzeichnis">
 	<pattern>WELCHE KURSE WERDEN DIESES SEMESTER ANGEBOTEN</pattern>
 	<template>
 		<srai>WELCHE KURSE GIBT ES DIESES SEMESTER</srai>
 	</template>
 </category>
 
-<category>
+<category topic="Vorlesungsverzeichnis">
 	<pattern>INFORMATIONSWISSENSCHAFT</pattern>
 	<that>FUER WELCHES FACH SOLL ICH DIR DIE AKTUELLEN KURSE ZEIGEN</that>
 	<template>prolog courses "findAllCurrentCourses('inf',X),halt"</template>

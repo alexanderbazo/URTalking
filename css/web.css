@@ -18,6 +18,31 @@ body {
 	font-family: 'Exo-400', sans-serif;
 }
 
+body #edit_aiml {
+	display:block;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:80px;
+	height:50px;
+	background-image:url('img/icon_admin.png');
+	background-repeat:no-repeat;
+	background-size:40px 53px;
+	background-position:center 5px;
+	
+	padding:2px;
+	padding-top:60px;
+	text-align:center;
+	text-decoration:none;
+	font-size:0.8em;
+	color:rgb(30,30,30);
+}
+
+body #edit_aiml:hover {
+	background-color:rgb(30,30,30);
+	color:rgb(250,250,250);
+}
+
 body h1 {
 	display:block;
 	width:900px;

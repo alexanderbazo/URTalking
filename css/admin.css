@@ -1,0 +1,151 @@
+@font-face {
+	font-family: Exo-400;
+	src: url('fonts/Exo2.0-Regular.otf');
+	format('opentype');
+}
+
+@font-face {
+	font-family: Exo-300;
+	src: url('fonts/Exo2.0-Light.otf');
+	format('opentype');
+}
+
+html {
+	width:100%;
+}
+
+body {
+	background-image:url('img/debut_light.png');
+	background-repeat:repeat;
+	width:100%;
+	padding:0;
+    margin:0;
+	font-family: 'Exo-400', sans-serif;
+}
+
+body #back_to_chat {
+	display:block;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:80px;
+	height:50px;
+	background-image:url('img/icon_bot.png');
+	background-repeat:no-repeat;
+	background-size:40px 53px;
+	background-position:center 5px;
+	
+	padding:2px;
+	padding-top:60px;
+	text-align:center;
+	text-decoration:none;
+	font-size:0.8em;
+	color:rgb(30,30,30);
+}
+
+body #back_to_chat:hover {
+	background-color:rgb(30,30,30);
+	color:rgb(250,250,250);
+}
+
+body #save_changes {
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:50px;
+	height:50px;
+
+	background-color:rgb(30,30,30);
+	background-image:url('img/icon_save.png');
+	background-repeat:no-repeat;
+	background-size:30px 30px;
+	background-position:center center;
+	overflow:hidden;
+}
+
+body #save_changes:hover {
+	background-color:rgb(255,46,157);
+	cursor:pointer;
+}
+
+body #file_status {
+	position:absolute;
+	top:0px;
+	right:50px;
+	width:50px;
+	height:50px;
+
+	background-color:rgb(30,30,30);
+	background-repeat:no-repeat;
+	background-size:30px 30px;
+	background-position:center center;
+	overflow:hidden;
+}
+
+body #file_status:hover {
+	background-color:rgb(255,46,157);
+	cursor:pointer;
+}
+
+body .file_open {
+	background-image:url('img/icon_open.png');
+}
+
+body .file_close {
+	background-image:url('img/icon_close.png');
+}
+
+body h1 {
+	display:block;
+	width:100%;
+	height:50px;
+	margin-top:0px;
+	line-height:50px;
+	background-color:rgb(30,30,30);
+	color:rgb(250,250,250);
+}
+
+body .listbox {
+	display:block;
+	width:200px;
+	float:left;
+}
+
+body .listbox ul {
+	margin:5px;
+	padding:0px;
+	list-style-type:none;
+}
+
+body #category_list ul li {
+	text-size:0.7em;
+}
+
+body .listbox ul li {
+	height:30px;
+	line-height:30px;
+	padding-left:5px;
+	list-style-type:none;
+}
+
+body .listbox ul .selected {
+	background-color:rgb(30,30,30);
+	color:rgb(250,250,250);
+}
+
+body .listbox ul li:hover {
+	background-color:rgb(255,46,157);
+	color:rgb(250,250,250);
+	cursor:pointer;
+}
+
+body .listbox h2 {
+	width:200px;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+
+body #editor {
+}
+

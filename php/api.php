@@ -16,6 +16,9 @@
 				case "database":
 					echo queryDatabase($query, $_POST['value']);
 					break;
+				case "xml":
+					echo getAimlXML();
+					break;
 				default:
 					echo "Error [Invalid request]";
 					break;
@@ -52,6 +55,11 @@
 					return $result;
 				}
 			}
+		}
+		
+		function getAimlXML() {
+			$xml = file_get_contents("../python/aiml/uni_regensburg.aiml");
+			return $xml;
 		}
 
 ?>
