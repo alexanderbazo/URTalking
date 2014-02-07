@@ -111,14 +111,20 @@ body .listbox {
 	float:left;
 }
 
+body .listbox h2 {
+	width:200px;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+
 body .listbox ul {
+	display:block;
+	height:600px;
+	overflow-y:auto;
 	margin:5px;
 	padding:0px;
 	list-style-type:none;
-}
-
-body #category_list ul li {
-	text-size:0.7em;
 }
 
 body .listbox ul li {
@@ -126,6 +132,33 @@ body .listbox ul li {
 	line-height:30px;
 	padding-left:5px;
 	list-style-type:none;
+}
+
+body .listbox ul .category_entry {
+	display:block;
+	font-size:0.6em;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+body .listbox ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+body .listbox ul::-webkit-scrollbar-track {
+	background: rgb(30,30,30);
+}
+
+body .listbox ul::-webkit-scrollbar-thumb {
+    background: rgba(255,46,157,0.8);
+}
+
+body .listbox ul::-webkit-scrollbar-thumb:window-inactive {
+	background: rgb(30,30,30);
+}
+
+body #category_list {
+	width:300px;
 }
 
 body .listbox ul .selected {
@@ -139,12 +172,6 @@ body .listbox ul li:hover {
 	cursor:pointer;
 }
 
-body .listbox h2 {
-	width:200px;
-	margin:0px;
-	padding:0px;
-	text-align:center;
-}
 
 body #editor {
 }
