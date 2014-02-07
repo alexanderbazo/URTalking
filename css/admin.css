@@ -109,20 +109,24 @@ body .listbox {
 	display:block;
 	width:200px;
 	float:left;
+	margin:5px;
 }
 
 body .listbox h2 {
-	width:200px;
+	width:100%;
 	margin:0px;
 	padding:0px;
 	text-align:center;
+}
+
+body h2 .heading_prefix {
+	color:rgb(255,46,157);
 }
 
 body .listbox ul {
 	display:block;
 	height:600px;
 	overflow-y:auto;
-	margin:5px;
 	padding:0px;
 	list-style-type:none;
 }
@@ -136,7 +140,7 @@ body .listbox ul li {
 
 body .listbox ul .category_entry {
 	display:block;
-	font-size:0.6em;
+	font-size:0.8em;
 	overflow:hidden;
 	white-space:nowrap;
 }
@@ -174,5 +178,28 @@ body .listbox ul li:hover {
 
 
 body #editor {
+	visibility:hidden;
+	width:400px;
+	margin-left:50px;
+}
+
+body #editor input.single_line {
+	width:400px;
+	height:25px;
+	line-height:25px;
+	margin-top:15px;
+
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	border-color:rgb(30,30,30);
+	background-color:rgba(255,255,255,0);
+	font-size:1em;
+}
+
+body #editor .input_label {
+	display:block;
+	margin-bottom:15px;
+	color:rgb(255,46,157);
+	font-size:0.9em;
 }
 
