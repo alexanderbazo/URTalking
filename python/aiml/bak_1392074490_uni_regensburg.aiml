@@ -18,16 +18,6 @@
 	</template>
 </category>
 
-<category topic="Smalltalk">
-<pattern>TSCHüSS</pattern>
-<template>Auf Wiedersehen. Ich hoffe ich konnte dir helfen!</template>
-</category>
-
-<category topic="Smalltalk">
-<pattern>HI</pattern>
-<template><srai>HALLO</srai></template>
-</category>
-
 <category topic="Fächer">
 <pattern>KANN ICH * ALS HAUPTFACH STUDIEREN</pattern>
 <template>prolog major "major('<star/>',X),halt"</template>

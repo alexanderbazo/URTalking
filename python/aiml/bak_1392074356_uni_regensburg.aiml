@@ -18,16 +18,6 @@
 	</template>
 </category>
 
-<category topic="Smalltalk">
-<pattern>TSCHüSS</pattern>
-<template>Auf Wiedersehen. Ich hoffe ich konnte dir helfen!</template>
-</category>
-
-<category topic="Smalltalk">
-<pattern>HI</pattern>
-<template><srai>HALLO</srai></template>
-</category>
-
 <category topic="Fächer">
 <pattern>KANN ICH * ALS HAUPTFACH STUDIEREN</pattern>
 <template>prolog major "major('<star/>',X),halt"</template>
@@ -89,11 +79,6 @@
 <pattern>INFORMATIONSWISSENSCHAFT</pattern>
 <that>FUER WELCHES FACH SOLL ICH DIR DIE AKTUELLEN KURSE ZEIGEN</that>
 <template>prolog courses "findAllCurrentCourses('inf',X),halt"</template>
-</category>
-
-<category topic="Campus">
-<pattern>WO IST DIE MENSA</pattern>
-<template>Die Mensa ist gegenüber der großen Bushaltestelle über die Treppen bei der Unterführung zu erreichen.</template>
 </category>
 
 </aiml>

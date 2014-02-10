@@ -68,33 +68,6 @@ body #save_changes:hover {
 	cursor:pointer;
 }
 
-body #file_status {
-	position:absolute;
-	top:0px;
-	right:50px;
-	width:50px;
-	height:50px;
-
-	background-color:rgb(30,30,30);
-	background-repeat:no-repeat;
-	background-size:30px 30px;
-	background-position:center center;
-	overflow:hidden;
-}
-
-body #file_status:hover {
-	background-color:rgb(255,46,157);
-	cursor:pointer;
-}
-
-body .file_open {
-	background-image:url('img/icon_open.png');
-}
-
-body .file_close {
-	background-image:url('img/icon_close.png');
-}
-
 body h1 {
 	display:block;
 	width:100%;
@@ -117,6 +90,21 @@ body .listbox h2 {
 	margin:0px;
 	padding:0px;
 	text-align:center;
+}
+
+body .listbox h2 .add {
+	display:inline-block;
+	width:30px;
+	height:30px;
+
+	background-image:url('img/icon_add.png');
+	background-repeat:no-repeat;
+	background-size:20px 20px;
+	background-position:center center;
+}
+
+body .listbox h2 .add:hover {
+	cursor:pointer;
 }
 
 body h2 .heading_prefix {
@@ -179,12 +167,12 @@ body .listbox ul li:hover {
 
 body #editor {
 	visibility:hidden;
-	width:400px;
+	width:600px;
 	margin-left:50px;
 }
 
 body #editor input.single_line {
-	width:400px;
+	width:600px;
 	height:25px;
 	line-height:25px;
 	margin-top:15px;
@@ -201,5 +189,68 @@ body #editor .input_label {
 	margin-bottom:15px;
 	color:rgb(255,46,157);
 	font-size:0.9em;
+}
+
+body #new_entry {
+	visibility:hidden;
+	position:absolute;
+	top:50px;
+	left:0px;
+	width:100%;
+	height:calc(100% - 50px);
+
+	background-color:rgba(30,30,30,0.9);
+	
+	color:rgb(250,250,250);
+	z-index:99999;
+}
+
+body #new_entry h2 {
+	width:100%;
+	text-align:center;
+}
+
+body #new_entry input {
+	display:block;
+	width:300px;
+	margin: auto;
+	margin-top:30px;
+}
+
+body #new_entry input.single_line {
+	height:25px;
+	line-height:25px;
+	margin-top:15px;
+
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	border-color:rgb(250,250,250);
+	background-color:rgba(255,255,255,0);
+	font-size:1em;
+	color:rgb(250,250,250);
+}
+
+body #new_entry .button {
+	width:100px;
+	margin-top:10px;
+	
+	border-type:solid;
+	border-width:2px;
+	border-color:rgb(30,30,30);
+	
+	background-color:rgb(255,46,157);
+	font-family: 'Exo-400', sans-serif;
+}
+
+body #new_entry .button {
+	cursor:pointer;
+}
+
+body #new_entry .add {
+	background-color:rgb(0,255,0);
+}
+
+body #new_entry .cancel {
+	background-color:rgb(255,0,0);
 }
 

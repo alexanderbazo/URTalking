@@ -14,17 +14,16 @@
 <body onload="init()">
 <h1>#Elies: Datenansicht</h1>
 
-<div id="file_status" class="file_open"></div>
 <div id="save_changes"></div>
 
 <div id="topic_list" class="listbox">
- <h2><span class="heading_prefix">#</span>Themen</h2>
+ <h2><span class="heading_prefix">#</span>Themen<span class="add" /></h2>
  <ul>
  </ul>
 </div>
 
 <div id="category_list" class="listbox">
- <h2><span class="heading_prefix">#</span>Kategorien</h2>
+ <h2><span class="heading_prefix">#</span>Fragen<span class="add" /></h2>
  <ul>
  </ul>
 </div>
@@ -37,8 +36,15 @@
 	<span class="input_label">That</span>
 </div>
 
-<a href="index.php" id="back_to_chat">Zurück zum Chat</a>
+<div id="new_entry">
+	<h2><span class="heading_prefix">#</span><span class="type">Thema</span></h2>
 
+<input id="entry" class="single_line" type="text" />
+<input type="button" class="button add" name="add" value="Hinzufügen" />
+<input type="button" class="button cancel" name="cancel" value="Abbrechen" />
+</div>
+
+<a href="index.php" id="back_to_chat">Zurück zum Chat</a>
 </body>
 
 </html>
