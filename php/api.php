@@ -76,31 +76,30 @@
 			echo $xml_header;
 			$aiml = $xml_header;
 			foreach (json_decode($json, true) as $value) {
-				//echo '<category topic="'.$value['topic'].'">';
+				$pattern = strtoupper($value['pattern']);
+				preg_replace('/[-?!.,;:]/', '', $pattern);
+				
+				$that = strtoupper($value['that']);
+				preg_replace('/[-?!.,;:]/', '', $that);
+				
+				
 				fwrite($file, "<category topic=\"".$value['topic']."\">\n");
-				//echo '<pattern>'.$value['pattern'].'</pattern>';
-				fwrite($file, "<pattern>".strtoupper($value['pattern'])."</pattern>\n");
+				fwrite($file, "<pattern>".$pattern."</pattern>\n");
 				if($value['that'] != '') {
-					//echo '<that>'.$value['that'].'</that>';
-					fwrite($file, "<that>".$value['that']."</that>\n");
+					fwrite($file, "<that>".$that."</that>\n");
 				}
 				
 				
 				
 				if(count($value['templates']) == 1) {
-					//echo '<template>'.$value['templates'][0].'</template>';
 					fwrite($file, "<template>".$value['templates'][0]."</template>\n");
 				} else {
-					//echo '<template><random>';
 					fwrite($file, "<template>\n<random>\n");
 					foreach($value['templates'] as $template) {
-						//echo '<li>'.$template.'</li>';
 						fwrite($file, "<li>".$template."</li>\n");
 					}
-					//echo '</random></template>';
 					fwrite($file, "</random>\n</template>\n");
 				}
-				//echo '</category>
 				fwrite($file, "</category>\n\n");
 			}
 			fwrite($file, "</aiml>\n");
