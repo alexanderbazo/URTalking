@@ -14,7 +14,7 @@
 </head>
 
 <body onload="init()">
-<h1>#Elies: Datenansicht</h1>
+<h1>#Elise: Datenansicht</h1>
 
 <input type="password" id="password" placeholder="Password"/>
 
