@@ -3,3 +3,5 @@
 *.ses
 *.ai
 *.aiml
+
+python/aiml/uni_regensburg.aiml
