@@ -34,6 +34,7 @@
 	<span class="input_label">Pattern</span>
 	<input id="that" class="single_line" type="text" />
 	<span class="input_label">That</span>
+	<input type="button" class="button delete" name="delete" value="Frage löschen" onclick="removeCurrentCategory()"/>
 </div>
 
 <div id="new_entry">

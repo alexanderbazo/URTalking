@@ -22,18 +22,28 @@ function setupDatasets() {
 		}
 		return this;
 	};
+	
+	Array.prototype.remove = function(from, to) {
+		var rest = this.slice((to || from) + 1 || this.length);
+		this.length = from < 0 ? this.length + from : from;
+		return this.push.apply(this, rest);
+	};
 }
 
 function setupUI() {
 	$('#save_changes').click(updateAimlOnServer);
 	$('#new_entry .cancel').click(cancelCurrentAction);
 	$('#new_entry .add').click(completeCurrentAction);
+	//$('#editor .delete').click(removeCurrentCategory);
+	
 	$('#topic_list .add').click(function(){
 		startNewAction("Thema");
 	});
 	$('#category_list .add').click(function(){
 		startNewAction("Frage");
 	});
+	
+	
 }
 
 function getAndProcessAimlXML() {
@@ -41,6 +51,7 @@ function getAndProcessAimlXML() {
 		   type: 'POST',
 		   url: 'php/api.php',
 		   data: 'request=xml',
+		   cache: false,
 		   success: parseXML
 		   });
 	
@@ -169,7 +180,7 @@ function showCategory() {
 		label_index = index+1;
 		tmp = value.replace(/"/g, '&quot;').trim();
 		template = '<input class="single_line template" id="template-'+index+'" type="text" value="'+tmp+'" /><span class="input_label template">Template '+label_index+'</span>';
-		$('#editor').append(template);
+		$(template).insertBefore('#editor .button');
 	});
 	
 	$('#editor input').unbind();
@@ -187,6 +198,25 @@ function getCategoryByIndex(topic, index) {
 		   }
 	}
 	return undefined;
+}
+
+function removeCurrentCategory() {
+	removeCategoryIdentifiedByIndex(current_topic, current_category_index);
+}
+
+function removeCategoryIdentifiedByIndex(topic, index) {
+	topics_json.topics[topic].remove(index);
+	if(Object.keys(topics_json.topics[topic]).length == 0) {
+		current_category_index = 0;
+		showCategoryList();
+		$('#editor').css('visibility', 'hidden');
+		return;
+	}
+	showCategoryList();
+	current_category_index = 0;
+	showCategory();
+	$('#category_list ul').children().removeClass('selected');
+	$('#category_list ul li').first().addClass('selected');
 }
 
 function onInputValueChanged(e) {
@@ -250,10 +280,10 @@ function addTopic(topic) {
 function addCategory(topic, index, category) {
 	if(topics_json.topics[topic] == undefined) {
 		addTopic(topic);
+		topics_json.topics[topic].clean();
 	}
 	if(topics_json.topics[topic][index] == undefined) {
 		topics_json.topics[topic][index] = category;
-		topics_json.topics[topic].clean();
 	}
 }
 

@@ -191,6 +191,23 @@ body #editor .input_label {
 	font-size:0.9em;
 }
 
+body #editor .button {
+	width:100px;
+	height:25px;
+	margin-top:10px;
+	
+	border-type:solid;
+	border-width:0px;
+	
+	background-color:rgb(255,0,0);
+	font-family: 'Exo-400', sans-serif;
+	color:rgb(250,250,250);
+}
+
+body #editor .button:hover {
+	cursor:pointer;
+}
+
 body #new_entry {
 	visibility:hidden;
 	position:absolute;
