@@ -8,6 +8,7 @@ import contextlib
 import cStringIO
 import os.path
 import marshal
+import string
 
 
 aiml_request = "";
@@ -42,6 +43,7 @@ def setupAiml():
 	restoreSession();
 
 def processRequest(str):
+	str = str.translate(string.maketrans("",""), string.punctuation);
 	print(aiml_kernel.respond(str, aiml_session));
 	saveSession();
 
