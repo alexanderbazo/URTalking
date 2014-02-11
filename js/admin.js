@@ -22,19 +22,12 @@ function setupDatasets() {
 		}
 		return this;
 	};
-	
-	Array.prototype.remove = function(from, to) {
-		var rest = this.slice((to || from) + 1 || this.length);
-		this.length = from < 0 ? this.length + from : from;
-		return this.push.apply(this, rest);
-	};
 }
 
 function setupUI() {
 	$('#save_changes').click(updateAimlOnServer);
 	$('#new_entry .cancel').click(cancelCurrentAction);
 	$('#new_entry .add').click(completeCurrentAction);
-	//$('#editor .delete').click(removeCurrentCategory);
 	
 	$('#topic_list .add').click(function(){
 		startNewAction("Thema");
@@ -180,7 +173,7 @@ function showCategory() {
 		label_index = index+1;
 		tmp = value.replace(/"/g, '&quot;').trim();
 		template = '<input class="single_line template" id="template-'+index+'" type="text" value="'+tmp+'" /><span class="input_label template">Template '+label_index+'</span>';
-		$(template).insertBefore('#editor .button');
+		$(template).insertBefore('#editor .newtemplate');
 	});
 	
 	$('#editor input').unbind();
@@ -205,7 +198,7 @@ function removeCurrentCategory() {
 }
 
 function removeCategoryIdentifiedByIndex(topic, index) {
-	topics_json.topics[topic].remove(index);
+	topics_json.topics[topic].splice(index,1);
 	if(Object.keys(topics_json.topics[topic]).length == 0) {
 		current_category_index = 0;
 		showCategoryList();
@@ -232,7 +225,11 @@ function onInputValueChanged(e) {
 			break;
 		default:
 			if(id.indexOf('template') != -1) {
-				templateIndex = id.split('-')[1];
+		   		templateIndex = id.split('-')[1];
+				if(newValue == "") {
+					cat.templates.splice(templateIndex,1);
+					return;
+		   		}
 				cat.templates[templateIndex] = newValue;
 			}
 			break;
@@ -241,11 +238,22 @@ function onInputValueChanged(e) {
 }
 
 function addNewTemplateToEditor() {
-			   
+	index = $('#editor .single_line.template').length;
+	label_index = index+1;
+	template = '<input class="single_line template" id="template-'+index+'" type="text" value="" /><span class="input_label template">Template '+label_index+'</span>';
+	$(template).insertBefore('#editor .newtemplate');
+	
+	$('#editor input').unbind();
+	$('#editor input').keyup(function(e) {
+		onInputValueChanged(e);
+	});
 }
 
 function updateAimlOnServer() {
-	console.log("update on server");
+	$('#upload .button').css('visibility', 'hidden');
+	$('#upload').css('visibility', 'visible');
+	
+	passwordhash = $.md5($('#password').val());
 	categoriesonly = {};
 	index = 0;
 	for(var topic in topics_json.topics) {
@@ -262,13 +270,30 @@ function updateAimlOnServer() {
 	$.ajax({
 		type: "POST",
 		url: 'php/api.php',
-		data: {'request': 'update', 'categories': JSON.stringify(categoriesonly)},
+		data: {'request': 'update', 'passwordhash': passwordhash, 'categories': JSON.stringify(categoriesonly)},
 		success: onServerUpdateResult
 	});
 }
 
 function onServerUpdateResult(data) {
+	switch(data) {
+		case '1':
+			$('#upload .text').html('Daten wurden auf dem Server gespeichert.');
+			break;
+		case '-1':
+			$('#upload .text').html('Fehler bei der Aktualisierung: Falsches Passwort.');
+			break;
+		default:
+		   	$('#upload .text').html('Fehler bei der Aktualisierung: Unbekannter Fehler.');
+			break;
+	}
+	
+	$('#upload .button').css('visibility', 'visible');
+}
 
+function discardUploadDialog() {
+	$('#upload').css('visibility', 'hidden');
+	$('#upload .button').css('visibility', 'hidden');
 }
 
 function addTopic(topic) {

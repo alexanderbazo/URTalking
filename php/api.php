@@ -65,6 +65,11 @@
 		}
 		
 		function updateAiml($json) {
+			$passwordhash = $_POST['passwordhash'];
+			if($passwordhash != "c172c78906f40ac7ed695e7490efbfba") {
+				return -1;
+			}
+		
 			$old_file_path = '../python/aiml/uni_regensburg.aiml';
 			$backup_file_path = '../python/aiml/bak_'.time().'_uni_regensburg.aiml';
 			$new_file_path = '../python/aiml/'.uniqid().'.aiml';
@@ -77,11 +82,10 @@
 			$aiml = $xml_header;
 			foreach (json_decode($json, true) as $value) {
 				$pattern = strtoupper($value['pattern']);
-				preg_replace('/[-?!.,;:]/', '', $pattern);
+				$pattern = preg_replace('/[-!.,;:]/', '', $pattern);
 				
 				$that = strtoupper($value['that']);
-				preg_replace('/[-?!.,;:]/', '', $that);
-				
+				$that = preg_replace('/[-!?.,;:]/', '', $that);
 				
 				fwrite($file, "<category topic=\"".$value['topic']."\">\n");
 				fwrite($file, "<pattern>".$pattern."</pattern>\n");

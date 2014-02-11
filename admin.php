@@ -8,11 +8,15 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/jquery.md5.js"></script>
+
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 </head>
 
 <body onload="init()">
 <h1>#Elies: Datenansicht</h1>
+
+<input type="password" id="password" placeholder="Password"/>
 
 <div id="save_changes"></div>
 
@@ -34,6 +38,7 @@
 	<span class="input_label">Pattern</span>
 	<input id="that" class="single_line" type="text" />
 	<span class="input_label">That</span>
+	<input type="button" class="button newtemplate" name="delete" value="Neues Template" onclick="addNewTemplateToEditor()"/>
 	<input type="button" class="button delete" name="delete" value="Frage löschen" onclick="removeCurrentCategory()"/>
 </div>
 
@@ -43,6 +48,11 @@
 <input id="entry" class="single_line" type="text" />
 <input type="button" class="button add" name="add" value="Hinzufügen" />
 <input type="button" class="button cancel" name="cancel" value="Abbrechen" />
+</div>
+
+<div id="upload">
+	<h2><span class="heading_prefix">#</span><span class="text">Daten werden aktualisiert und gespeichert ...</span></h2>
+	<input type="button" class="button ok" name="ok" value="Zurück zur Datenansicht" onclick="discardUploadDialog()" />
 </div>
 
 <a href="index.php" id="back_to_chat">Zurück zum Chat</a>
