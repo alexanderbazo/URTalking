@@ -40,7 +40,7 @@ def getRequest():
 		elif o == '-c':
 			spellchecker_file = a
 		else:
-			print("Usage: %s -q QUERY -a AIML-FILE -s SESSION-ID -d DICTONARY-FOLDER" % sys.argv[0])
+			print("Usage: %s -q QUERY -a AIML-FILE -s SESSION-ID -d DICTONARY-FOLDER -c WORD-LIST FOR SPELLCHECKER" % sys.argv[0])
 
 def setupAiml():
 	global aiml_kernel, aiml_file

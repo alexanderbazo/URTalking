@@ -42,7 +42,7 @@ function updateAiml($json) {
 			if($pos === false) {
 				$template = htmlspecialchars($template, ENT_QUOTES);
 			} else {
-				$template = html_entity_decode($template);
+				#$template = html_entity_decode($template);
 			}
 			fwrite($file, "<template>".$template."</template>\n");
 		} else {
@@ -52,7 +52,7 @@ function updateAiml($json) {
 				if($pos === false) {
 					$template = htmlspecialchars($template, ENT_QUOTES);
 				} else {
-					$template = html_entity_decode($template);
+					#$template = html_entity_decode($template);
 				}
 				fwrite($file, "<li>".$template."</li>\n");
 			}
