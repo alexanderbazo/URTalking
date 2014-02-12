@@ -21,7 +21,7 @@
 		</footer>
 
 		<a href="admin.php" id="edit_aiml">Datenbasis bearbeiten</a>
-		<a href="about.php" id="beta"></a>
+		<a href="" id="beta"></a>
 
 		<div id="course_info" class="hidden">
 			<h1><span class="course_nr">36554</span> <span class="title">Prolog</span></h1>
