@@ -13,7 +13,7 @@ class SpellChecker:
 
 	def __init__(self, word_list):
 		global NWORDS, alphabet
-		self.NWORDS = self.train(self.words(file('lists/'+word_list).read()))
+		self.NWORDS = self.train(self.words(file(word_list).read()))
 		self.alphabet = 'abcdefghijklmnopqrstuvwxyzäöüß'
 
 	def words(self, text):

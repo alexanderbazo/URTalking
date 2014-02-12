@@ -14,6 +14,7 @@ aiml_request = ""
 aiml_file = ""
 aiml_session = ""
 dict_folder = ""
+spellchecker_file = ""
 replacement_dict = {}
 aimlizer = ""
 
@@ -25,8 +26,8 @@ def nostdout():
  	sys.stdout = save_stdout
 
 def getRequest():
-	global aiml_request, aiml_file, aiml_session, dict_folder
-	myopts, args = getopt.getopt(sys.argv[1:],"q:a:s:d:")
+	global aiml_request, aiml_file, aiml_session, dict_folder, spellchecker_file
+	myopts, args = getopt.getopt(sys.argv[1:],"q:a:s:d:c:")
 	for o, a in myopts:
 		if o == '-q':
 			aiml_request = a
@@ -36,6 +37,8 @@ def getRequest():
 			aiml_session = a
 		elif o == '-d':
 			dict_folder = a
+		elif o == '-c':
+			spellchecker_file = a
 		else:
 			print("Usage: %s -q QUERY -a AIML-FILE -s SESSION-ID -d DICTONARY-FOLDER" % sys.argv[0])
 
@@ -50,8 +53,7 @@ def setupAimlizer():
 	global aimlizer
 	aimlizer = Aimlizer()
 	aimlizer.addModule(NormalizerModule())
-	#aimlizer.addModule(SpellCheckerModule('gutenberg_de_collection.list'))
-	aimlizer.addModule(SpellCheckerModule('top10k_de.list'))
+	#aimlizer.addModule(SpellCheckerModule(spellchecker_file))
 	aimlizer.addModule(ReplacerModule(dict_folder))
 
 def processRequest(str):
