@@ -1,5 +1,10 @@
 <?php
 	
+	function queryAIML($query, $file) {
+		$result = ask_aiml($query, $file);
+		return processAimlResult($result);
+	}
+	
 	function ask_aiml($request, $aiml_file)
 	{
 		$result = shell_exec('../python/ask.py -q "'.$request.'" -a "../python/aiml/'.$aiml_file.'" -s '.session_id().' 2>&1');
@@ -11,5 +16,21 @@
 		}
 		
 	}
+	
+	function processAimlResult($result) {
+		$prologrequest = strpos($result, 'prolog');
+		
+		if($prologrequest === false) {
+			echo $result;
+		} else {
+			$result = ask_prolog($result);
+			if($result == '' || $result == 'FALSE') {
+				return 'Diese Frage kann ich so leider nicht beantworten. Tut mir leid.';
+			} else {
+				return $result;
+			}
+		}
+	}
+
 	
 ?>
