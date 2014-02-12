@@ -37,12 +37,23 @@ function updateAiml($json) {
 		
 		
 		if(count($value['templates']) == 1) {
-			$template = htmlspecialchars($value['templates'][0], ENT_QUOTES);
+			$template = $value['templates'][0];
+			$pos = strpos($template,'srai');
+			if($pos === false) {
+				$template = htmlspecialchars($template, ENT_QUOTES);
+			} else {
+				$template = html_entity_decode($template);
+			}
 			fwrite($file, "<template>".$template."</template>\n");
 		} else {
 			fwrite($file, "<template>\n<random>\n");
 			foreach($value['templates'] as $template) {
-				$template = htmlspecialchars($template, ENT_QUOTES);
+				$pos = strpos($template,'srai');
+				if($pos === false) {
+					$template = htmlspecialchars($template, ENT_QUOTES);
+				} else {
+					$template = html_entity_decode($template);
+				}
 				fwrite($file, "<li>".$template."</li>\n");
 			}
 			fwrite($file, "</random>\n</template>\n");
