@@ -7,7 +7,7 @@
 	
 	function ask_aiml($request, $aiml_file)
 	{
-		$result = shell_exec('../python/ask.py -q "'.$request.'" -a "../python/aiml/'.$aiml_file.'" -s '.session_id().' 2>&1');
+		$result = shell_exec('../python/ask.py -q "'.$request.'" -a "../python/aiml/'.$aiml_file.'" -s '.session_id().' -d "../python/dict/" 2>&1');
 		$pos = strpos($result, 'WARNING');
 		if($pos === false) {
 			return $result;
