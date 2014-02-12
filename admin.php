@@ -55,6 +55,8 @@
 	<input type="button" class="button ok" name="ok" value="Zurück zur Datenansicht" onclick="discardUploadDialog()" />
 </div>
 
+<div id="loading"></div>
+
 <a href="index.php" id="back_to_chat">Zurück zum Chat</a>
 </body>
 

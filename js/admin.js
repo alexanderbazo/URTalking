@@ -206,6 +206,7 @@ function removeCategoryIdentifiedByIndex(topic, index) {
 function updateAimlOnServer() {
 	$('#upload .button').css('visibility', 'hidden');
 	$('#upload').css('visibility', 'visible');
+	$('body #loading').css('visibility', 'visible');
 	
 	passwordhash = $.md5($('#password').val());
 	categoriesonly = {};
@@ -270,22 +271,12 @@ function parseXML(data) {
 	showTopicList();
 	$('#topic_list ul li').first().addClass('selected');
 	showCategoryList();
+	
+	delayUIafterLoading(1);
 }
 		   
 function onServerUpdateResult(data) {
-	switch(data) {
-		case '1':
-			$('#upload .text').html('Daten wurden auf dem Server gespeichert.');
-			break;
-		case '-1':
-			$('#upload .text').html('Fehler bei der Aktualisierung: Falsches Passwort.');
-			break;
-		default:
-		   	$('#upload .text').html('Fehler bei der Aktualisierung: Unbekannter Fehler.');
-			break;
-	}
-	
-	$('#upload .button').css('visibility', 'visible');
+	delayUIafterSaving(data, 1);
 }
 
 /*
@@ -320,6 +311,30 @@ function onInputValueChanged(e) {
 /*
 	UI Actions
 */
+
+function delayUIafterLoading(seconds) {
+	setTimeout(function() {
+		$('body #loading').css('visibility', 'hidden');
+	},seconds*1000);
+}
+
+function delayUIafterSaving(data, seconds) {
+	setTimeout(function() {
+		switch(data) {
+			case '1':
+			   $('#upload .text').html('Daten wurden auf dem Server gespeichert.');
+			   break;
+			case '-1':
+			   $('#upload .text').html('Fehler bei der Aktualisierung: Falsches Passwort.');
+			   break;
+			default:
+			   $('#upload .text').html('Fehler bei der Aktualisierung: Unbekannter Fehler.');
+			   break;
+		}
+		$('#upload .button').css('visibility', 'visible');
+		$('body #loading').css('visibility', 'hidden');
+	},seconds*1000);
+}
 
 function addNewTemplateToEditor() {
 	index = $('#editor .single_line.template').length;
