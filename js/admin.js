@@ -3,6 +3,11 @@ var current_topic;
 var current_category_index;
 var current_action;
 
+
+/*
+	SETUP
+*/
+
 function init()
 {
 	setupDatasets();
@@ -39,53 +44,9 @@ function setupUI() {
 	
 }
 
-function getAndProcessAimlXML() {
-	$.ajax({
-		   type: 'POST',
-		   url: 'php/api.php',
-		   data: 'request=xml',
-		   cache: false,
-		   success: parseXML
-		   });
-	
-}
-
-function parseXML(data) {
-	xmlDoc = $.parseXML(data);
-	$xml = $(xmlDoc);
-	$categories = $xml.find('category');
-	$.each($categories, function(index,value) {
-		topic = $(value).attr('topic');
-		   
-		if(current_topic == undefined) {
-			current_topic = topic;
-		}
-		   
-		pattern = $(value).find('pattern').html();
-		that = $(value).find('that').html();
-		
-		templates = new Array();
-		template_node = $(value).find('template');
-		
-		if($(template_node).find('li').length > 0) {
-		   	$.each($(template_node).find('li'), function(index,value) {
-				tmp = $(value).html().trim();
-				templates.push(tmp);
-			});
-		} else {
-			templates.push($(template_node).html());
-		}
-		
-		
-		category = {index:index,topic:topic,pattern:pattern,that:that,templates:templates};
-		addCategory(topic, index, category);
-	});
-	
-	showTopicList();
-	$('#topic_list ul li').first().addClass('selected');
-	showCategoryList();
-	
-}
+/*
+	Topic List
+*/
 
 function showTopicList() {
 	list = $('#topic_list ul');
@@ -116,6 +77,17 @@ function topicAdded(topic) {
 	$('#topic_list ul').children().removeClass('selected');
 	$('#topic_list ul li').last().addClass('selected');
 }
+
+
+function addTopic(topic) {
+	if(topics_json.topics[topic] == undefined) {
+		topics_json.topics[topic] = [];
+	}
+}
+
+/*
+	Category List
+*/
 
 function showCategoryList() {
 	topic = current_topic;
@@ -149,18 +121,9 @@ function showCategoryList() {
 	 });
 }
 
-function categoryChanged(category_index) {
-	current_category_index = category_index;
-	showCategory();
-}
-
-function categoryAdded(category_index) {
-	current_category_index = category_index;
-	showCategoryList();
-	showCategory();
-	$('#category_list ul').children().removeClass('selected');
-	$('#category_list ul li').last().addClass('selected');
-}
+/*
+	Category
+*/
 
 function showCategory() {
 	$('#editor').css('visibility', 'visible');
@@ -183,6 +146,19 @@ function showCategory() {
 	
 }
 
+function categoryChanged(category_index) {
+	current_category_index = category_index;
+	showCategory();
+}
+		   
+function categoryAdded(category_index) {
+   current_category_index = category_index;
+   showCategoryList();
+   showCategory();
+   $('#category_list ul').children().removeClass('selected');
+   $('#category_list ul li').last().addClass('selected');
+}
+
 function getCategoryByIndex(topic, index) {
 	for(var value in topics_json.topics[topic]) {
 		   value = topics_json.topics[topic][value];
@@ -192,7 +168,17 @@ function getCategoryByIndex(topic, index) {
 	}
 	return undefined;
 }
-
+		   
+function addCategory(topic, index, category) {
+	if(topics_json.topics[topic] == undefined) {
+		addTopic(topic);
+		topics_json.topics[topic].clean();
+	}
+	if(topics_json.topics[topic][index] == undefined) {
+		topics_json.topics[topic][index] = category;
+	}
+}
+		   
 function removeCurrentCategory() {
 	removeCategoryIdentifiedByIndex(current_topic, current_category_index);
 }
@@ -212,42 +198,10 @@ function removeCategoryIdentifiedByIndex(topic, index) {
 	$('#category_list ul li').first().addClass('selected');
 }
 
-function onInputValueChanged(e) {
-	cat = getCategoryByIndex(current_topic, current_category_index);
-	newValue = $(e.target).val();
-	id = $(e.target).attr('id');
-	switch(id) {
-		case 'pattern':
-			cat.pattern = newValue;
-			break;
-		case 'that':
-			cat.that = newValue;
-			break;
-		default:
-			if(id.indexOf('template') != -1) {
-		   		templateIndex = id.split('-')[1];
-				if(newValue == "") {
-					cat.templates.splice(templateIndex,1);
-					return;
-		   		}
-				cat.templates[templateIndex] = newValue;
-			}
-			break;
-	}
-
-}
-
-function addNewTemplateToEditor() {
-	index = $('#editor .single_line.template').length;
-	label_index = index+1;
-	template = '<input class="single_line template" id="template-'+index+'" type="text" value="" /><span class="input_label template">Template '+label_index+'</span>';
-	$(template).insertBefore('#editor .newtemplate');
-	
-	$('#editor input').unbind();
-	$('#editor input').keyup(function(e) {
-		onInputValueChanged(e);
-	});
-}
+		   
+/*
+	Server Actions
+*/
 
 function updateAimlOnServer() {
 	$('#upload .button').css('visibility', 'hidden');
@@ -275,6 +229,49 @@ function updateAimlOnServer() {
 	});
 }
 
+function getAndProcessAimlXML() {
+	$.ajax({
+		type: 'POST',
+		url: 'php/api.php',
+		data: 'request=xml',
+		cache: false,
+		success: parseXML
+	});
+}
+		   
+function parseXML(data) {
+	xmlDoc = $.parseXML(data);
+	$xml = $(xmlDoc);
+	$categories = $xml.find('category');
+	$.each($categories, function(index,value) {
+		topic = $(value).attr('topic');
+			if(current_topic == undefined) {
+				current_topic = topic;
+			}
+			pattern = $(value).find('pattern').html();
+			that = $(value).find('that').html();
+				  
+			templates = new Array();
+			template_node = $(value).find('template');
+				  
+			if($(template_node).find('li').length > 0) {
+				$.each($(template_node).find('li'), function(index,value) {
+					tmp = $(value).html().trim();
+					templates.push(tmp);
+				});
+			} else {
+				templates.push($(template_node).html());
+			}
+				  
+			category = {index:index,topic:topic,pattern:pattern,that:that,templates:templates};
+			addCategory(topic, index, category);
+	});
+		   
+	showTopicList();
+	$('#topic_list ul li').first().addClass('selected');
+	showCategoryList();
+}
+		   
 function onServerUpdateResult(data) {
 	switch(data) {
 		case '1':
@@ -291,27 +288,56 @@ function onServerUpdateResult(data) {
 	$('#upload .button').css('visibility', 'visible');
 }
 
+/*
+	UI Callbacks
+*/
+
+function onInputValueChanged(e) {
+	cat = getCategoryByIndex(current_topic, current_category_index);
+	newValue = $(e.target).val();
+	id = $(e.target).attr('id');
+	switch(id) {
+		case 'pattern':
+			cat.pattern = newValue;
+			break;
+		case 'that':
+			cat.that = newValue;
+			break;
+		default:
+			if(id.indexOf('template') != -1) {
+				templateIndex = id.split('-')[1];
+				if(newValue == "") {
+					cat.templates.splice(templateIndex,1);
+					return;
+				}
+				cat.templates[templateIndex] = newValue;
+			}
+			break;
+	}
+}
+
+
+/*
+	UI Actions
+*/
+
+function addNewTemplateToEditor() {
+	index = $('#editor .single_line.template').length;
+	label_index = index+1;
+	template = '<input class="single_line template" id="template-'+index+'" type="text" value="" /><span class="input_label template">Template '+label_index+'</span>';
+	$(template).insertBefore('#editor .newtemplate');
+		   
+	$('#editor input').unbind();
+	$('#editor input').keyup(function(e) {
+		onInputValueChanged(e);
+	});
+}
+		   
 function discardUploadDialog() {
 	$('#upload').css('visibility', 'hidden');
 	$('#upload .button').css('visibility', 'hidden');
 }
-
-function addTopic(topic) {
-	if(topics_json.topics[topic] == undefined) {
-		topics_json.topics[topic] = [];
-	}
-}
-
-function addCategory(topic, index, category) {
-	if(topics_json.topics[topic] == undefined) {
-		addTopic(topic);
-		topics_json.topics[topic].clean();
-	}
-	if(topics_json.topics[topic][index] == undefined) {
-		topics_json.topics[topic][index] = category;
-	}
-}
-
+		   
 function startNewAction(type) {
 	current_action = type;
 	$('#new_entry').css("visibility", "visible");
