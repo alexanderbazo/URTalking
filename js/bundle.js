@@ -49,7 +49,7 @@ function queryDatabase(query, value, callback) {
 
 function processServerResponse(response)
 {
-	writeToOutput(response, 'elies');
+	writeToOutput(decodeURI(response), 'elies');
 }
 
 function setupCourseList() {
@@ -79,7 +79,9 @@ function writeToOutput(msg, source)
 	var div = document.getElementById('output');
 	div.innerHTML = div.innerHTML + '<span class="line"><span class="' + source + '">' + source + ': </span>' + msg + '</span>';
 	div.scrollTop = div.scrollHeight;
+	$("#output .line a").attr("target","_blank");
 	setupCourseList();
 	if(source == "elies" && speak == true) {
 	}
+	
 }

@@ -121,6 +121,10 @@ body #output .line {
 	padding:5px;
 }
 
+body #output .line a{
+	color:rgb(255,46,157);
+}
+
 body #output .me {
 	font-style:bold;
 	color:rgb(255,46,157);
