@@ -37,10 +37,12 @@ function updateAiml($json) {
 		
 		
 		if(count($value['templates']) == 1) {
-			fwrite($file, "<template>".$value['templates'][0]."</template>\n");
+			$template = htmlspecialchars($value['templates'][0], ENT_QUOTES);
+			fwrite($file, "<template>".$template."</template>\n");
 		} else {
 			fwrite($file, "<template>\n<random>\n");
 			foreach($value['templates'] as $template) {
+				$template = htmlspecialchars($template, ENT_QUOTES);
 				fwrite($file, "<li>".$template."</li>\n");
 			}
 			fwrite($file, "</random>\n</template>\n");
