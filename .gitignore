@@ -6,5 +6,6 @@
 
 python/aiml/uni_regensburg.aiml
 python/aiml/*
+python/*.pyc
 
 *.aiml
