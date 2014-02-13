@@ -258,11 +258,10 @@ function parseXML(data) {
 			if($(template_node).find('li').length > 0) {
 				$.each($(template_node).find('li'), function(index,value) {
 					tmp = $(value).html().trim();
-					
-					templates.push(htmlDecode(tmp));
+					templates.push(tmp);
 				});
 			} else {
-				templates.push(htmlDecode($(template_node).html()));
+				templates.push($(template_node).html());
 			}
 				  
 			category = {index:index,topic:topic,pattern:pattern,that:that,templates:templates};
