@@ -49,7 +49,7 @@ function queryDatabase(query, value, callback) {
 
 function processServerResponse(response)
 {
-	writeToOutput(decodeURI(response), 'elies');
+	writeToOutput(decodeURI(response), 'elise');
 }
 
 function setupCourseList() {
@@ -81,7 +81,7 @@ function writeToOutput(msg, source)
 	div.scrollTop = div.scrollHeight;
 	$("#output .line a").attr("target","_blank");
 	setupCourseList();
-	if(source == "elies" && speak == true) {
+	if(source == "elise" && speak == true) {
 	}
 	
 }

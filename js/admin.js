@@ -258,10 +258,11 @@ function parseXML(data) {
 			if($(template_node).find('li').length > 0) {
 				$.each($(template_node).find('li'), function(index,value) {
 					tmp = $(value).html().trim();
-					templates.push(tmp);
+					
+					templates.push(htmlDecode(tmp));
 				});
 			} else {
-				templates.push($(template_node).html());
+				templates.push(htmlDecode($(template_node).html()));
 			}
 				  
 			category = {index:index,topic:topic,pattern:pattern,that:that,templates:templates};
@@ -274,8 +275,15 @@ function parseXML(data) {
 	
 	delayUIafterLoading(1);
 }
+
+function htmlDecode(input){
+	var e = document.createElement('div');
+	e.innerHTML = input;
+	return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+}
 		   
 function onServerUpdateResult(data) {
+	console.log(data);
 	delayUIafterSaving(data, 1);
 }
 
