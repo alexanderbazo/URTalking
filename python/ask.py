@@ -57,7 +57,9 @@ def setupAimlizer():
 	aimlizer.addModule(ReplacerModule(dict_folder))
 
 def processRequest(str):
+	print("INPUT: "+str)
 	str = aimlizer.aimlize(str)
+	print("AIMLIZED: "+str)
 	print(aiml_kernel.respond(str, aiml_session))
 	saveSession()
 

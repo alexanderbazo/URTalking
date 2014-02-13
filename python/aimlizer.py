@@ -68,21 +68,19 @@ class ReplacerModule(AimlizerModule):
 		return self.replaceTokens(str)
 
 	def replaceTokens(self, str):
-		out = ""
-		test = str.split(" ");
+		out = str
+		words = str.split(" ")
+		word_count = len(words)
+		replacement = ""
 		
-		""" TODO: Replace phrases, not words!
-		word_count = len(test);
-		for i in reversed(range(1, word_count)):
-			phrase = " ".join(test[0:i])
-		"""
-			
-		
-		for(word) in str.split(" "):
-			try:
-				replacement = self.replacement_dict[word.upper()]
-				out += replacement+" "
-			except KeyError:
-				out += word+" "
-		out = out[:-1]
+		for i in range(0, word_count):
+			for j in reversed(range(0, word_count+1)):
+				phrase = " ".join(words[i:j])
+				try:
+					replacement = self.replacement_dict[phrase.upper()]
+				except KeyError:
+					replacement = ""
+				if(replacement != ""):
+					out = out.replace(phrase, replacement);
+				
 		return out
