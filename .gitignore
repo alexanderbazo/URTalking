@@ -11,3 +11,5 @@ python/*.pyc
 *.aiml
 
 python/lists/gutenberg_de_collection.list
+
+*.log
