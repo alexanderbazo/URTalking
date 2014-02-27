@@ -26,6 +26,22 @@ class NormalizerModule(AimlizerModule):
 		str = re.sub(' +',' ',str)
 		return str
 
+class StopwordReductionModule(AimlizerModule):
+	list = []
+	
+	def __init__(self, stopwordlist):
+		global list
+		with open(stopwordlist, 'r') as f:
+			list = f.readlines()
+
+	def process(self, str):
+		out = ""
+		for(word) in str.split(" "):
+			if(word not in list):
+				out += word+" "
+		out = out[:-1]
+		return out
+
 class SpellCheckerModule(AimlizerModule):
 	sp = None
 
@@ -37,7 +53,7 @@ class SpellCheckerModule(AimlizerModule):
 		out = ""
 		for(word) in str.split(" "):
 			correction = self.sp.correct(word)
-			out += correction+" ";
+			out += correction+" "
 		out = out[:-1]
 		return out
 
@@ -63,6 +79,7 @@ class ReplacerModule(AimlizerModule):
 					values = parts[1].split(",")
 					for(value) in values:
 						self.replacement_dict[value.rstrip('\n').upper()] = key.upper()
+		print(self.replacement_dict);
 		
 	def process(self, str):
 		return self.replaceTokens(str)

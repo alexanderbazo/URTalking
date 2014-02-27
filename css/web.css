@@ -69,14 +69,14 @@ body h1 {
 
 	background-color:rgb(30,30,30);
 
-	color:rgb(255,46,157);
+	color:rgb(239,127,26);
 	
 	
 	font-size:1.8em;
 }
 
 body h1 .highlight {
-	color:rgb(255,46,157);
+	color:rgb(239,127,26);
 }
 
 body h1 .sub {
@@ -122,12 +122,12 @@ body #output .line {
 }
 
 body #output .line a{
-	color:rgb(255,46,157);
+	color:rgb(239,127,26);
 }
 
 body #output .me {
 	font-style:bold;
-	color:rgb(255,46,157);
+	color:rgb(239,127,26);
 }
 
 body #output .elise {
@@ -141,7 +141,7 @@ body #output .course {
 
 body #output .course:hover {
 	cursor:pointer;
-	color:rgb(255,46,157);
+	color:rgb(239,127,26);
 }
 
 body input {
@@ -186,7 +186,7 @@ body #course_info h1 {
 }
 
 body #course_info .course_nr {
-	color:rgb(255,46,157);
+	color:rgb(239,127,26);
 	font-style:bold;
 }
 
@@ -207,5 +207,5 @@ body footer {
 }
 
 body footer a {
-	color:rgb(255,46,157);
+	color:rgb(239,127,26);
 }

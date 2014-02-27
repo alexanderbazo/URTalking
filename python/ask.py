@@ -17,6 +17,7 @@ dict_folder = ""
 spellchecker_file = ""
 replacement_dict = {}
 aimlizer = ""
+stopwords = ""
 
 @contextlib.contextmanager
 def nostdout():
@@ -26,8 +27,8 @@ def nostdout():
  	sys.stdout = save_stdout
 
 def getRequest():
-	global aiml_request, aiml_file, aiml_session, dict_folder, spellchecker_file
-	myopts, args = getopt.getopt(sys.argv[1:],"q:a:s:d:c:")
+	global aiml_request, aiml_file, aiml_session, dict_folder, spellchecker_file,stopwords
+	myopts, args = getopt.getopt(sys.argv[1:],"q:a:s:d:c:l:")
 	for o, a in myopts:
 		if o == '-q':
 			aiml_request = a
@@ -39,6 +40,8 @@ def getRequest():
 			dict_folder = a
 		elif o == '-c':
 			spellchecker_file = a
+		elif o == '-l':
+			stopwords = a
 		else:
 			print("Usage: %s -q QUERY -a AIML-FILE -s SESSION-ID -d DICTONARY-FOLDER -c WORD-LIST FOR SPELLCHECKER" % sys.argv[0])
 
@@ -52,6 +55,7 @@ def setupAiml():
 def setupAimlizer():
 	global aimlizer
 	aimlizer = Aimlizer()
+	aimlizer.addModule(StopwordReductionModule(stopwords))
 	aimlizer.addModule(NormalizerModule())
 	#aimlizer.addModule(SpellCheckerModule(spellchecker_file))
 	aimlizer.addModule(ReplacerModule(dict_folder))
