@@ -60,6 +60,7 @@ class SpellCheckerModule(AimlizerModule):
 
 class ReplacerModule(AimlizerModule):
 	replacement_dict = {}
+	context_dict = {}
 	
 	def __init__(self, dictionary_folder):
 		self.loadDictionaries(dictionary_folder)
@@ -71,16 +72,31 @@ class ReplacerModule(AimlizerModule):
 		for(dirpath, dirnames, filenames) in walk(dictionary_folder):
 			files.extend(filenames)
 			break
-		for(filename) in files:
+		for filename in files:
+			if not ".dict" in filename:
+				continue
 			with open(dictionary_folder+"/"+filename) as file:
-				for(line) in file.readlines():
+				for line in file.readlines():
+					if line[0:2] == "//":
+						continue
 					parts = line.split(":")
 					key = parts[0]
 					values = parts[1].split(",")
-					for(value) in values:
-						self.replacement_dict[value.rstrip('\n').upper()] = key.upper()
-		print(self.replacement_dict);
-		
+					for value in values:
+						if(self.extractNeighborContext(value, key) == 0):
+							self.replacement_dict[value.rstrip('\n').upper()] = key.upper()
+
+	def extractNeighborContext(self, str, key):
+		global context_dict
+		if  not "(" in str:
+			return 0
+
+		tmp = str[str.find("(")+1:str.find(")")]
+		str = str[0:str.find("(")]
+		self.context_dict[str.rstrip('\n').upper()] = key.upper()+","+tmp
+		return 1
+
+
 	def process(self, str):
 		return self.replaceTokens(str)
 
@@ -93,11 +109,42 @@ class ReplacerModule(AimlizerModule):
 		for i in range(0, word_count):
 			for j in reversed(range(0, word_count+1)):
 				phrase = " ".join(words[i:j])
-				try:
-					replacement = self.replacement_dict[phrase.upper()]
-				except KeyError:
-					replacement = ""
+				replacement = self.replaceTokenInContext(phrase, str)
 				if(replacement != ""):
 					out = out.replace(phrase, replacement);
 				
 		return out
+
+	def replaceTokenInContext(self, phrase, str):
+		list = str.split(" ")
+		tmp = ""
+		try:
+			tmp = self.context_dict[phrase.upper()]
+			replacement = tmp[0:tmp.find(",")]
+			tokens = tmp[tmp.find(",")+1:len(tmp)]
+			for token in tokens.split(";"):
+				word = token[0:token.find("[")]
+				count = token[token.find("[")+1:token.find("]")]
+				if word in list:
+					distance = abs(list.index(phrase) - list.index(word))
+					if distance <= count:
+						return replacement
+				try:
+					tmp = self.replacement_dict[phrase.upper()]
+				except KeyError:
+					tmp = ""
+		except KeyError:
+			try:
+				tmp = self.replacement_dict[phrase.upper()]
+			except KeyError:
+				tmp = ""
+		return tmp
+
+
+
+
+
+
+
+
+

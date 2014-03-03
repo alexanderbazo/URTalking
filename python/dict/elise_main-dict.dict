@@ -1,0 +1,27 @@
+//Ersetzung mit Bezug auf den Kontext: WORT(NACHBAR[ENTFERNUNG],NACHBAR[ENTFERNUNG],..) Bsp.: punkte(bekommt[2];bekomme[2])
+HALLO:hi,hey,guten tag,tag,tauchen,guten abend,guten morgen,moin,hallöchen,hallöle,hoi,moin,servus,aloha,grüß gott,gruess gott,habe die ehre,bonjour
+JA:korrekt,exakt,stimmt,yep,jawohl,jawoll,gern,gerne,gerne ja,ei-ei,ei,hm,in der tat,sehr wohl,freilich,fralle,aber ja,abgemacht,bestimmt,gebongt,gewiss,in Ordnung,selbstverständlich,doch,ok,o.k.,okay,einverstanden,sicher,sicherlich
+NEIN:durchaus nicht,gewiss nicht,keine spur,keinesfalls,keineswegs,na,nope,ne,nie,absolut nicht,niemals,mitnichten,bestimmt nicht,ganz und garnicht,ausgeschlossen,unter keinen Umständen,nicht um alles in der welt,auf gar keinen fall,auf keinen fall,bloß nicht,keine spur,kommt nicht in die tüte,kommt nicht in frage,nee,nicht im entferntesten,nicht im geringsten,nichts da,vergiss es,abgelehnt
+TSCHÜSS:ciao,bye,bye-bye,bye bye,baba,Servus,ade,adios,adieu,auf wiedersehen,wiedersehen,mache es gut,machs gut,gehab dich wohl,leb wohl,lebe wohl,tschau,tschauie,tschö,tschüssi,tschüssle,bis dann,see you,cu,bis dann mal
+MI:medieninformatik,medieninfo,med,mei,medieninf
+IW:informationswissenschaft,informationswissenschaften,infowiss,info,infwiss,inf.wiss
+MW:medienwissenschaft,medienwiss,mewi,
+BERUF:job,arbeit,anstellung,beschäftigung,beschäftigungsmöglichkeit,beschäftigungsmöglichkeiten,gewerbe,tätigkeit,profession,stellenangebot,stelle,arbeitsplatz,arbeitsstelle,beurufsweg,jobperspektive,jobperspektiven,berufliche aussichten,berufsfeld,berufsfelder
+KURS: kurse,vorlesung,vorlesungen,veranstaltung,veranstaltungen,lehrveranstaltung,lehrveranstaltungen,pflichtkurs,pflichtkurse,wahlkurs,wahlkurse,bildungsveranstaltung,bildungsveranstaltungen
+VORKENNTNISS: vorkenntnisse,voraussetzung,voraussetzungen,kenntniss,kenntnisse,
+HF:hauptfach,hauptfächer,hauptfaches
+NF:nebenfach,nebenfächer,nebenfaches
+BF:bachelorfach,bachelorfächer,bachelorfaches
+FACHKOMBI:fachkombination,fachkombinationen,fächerkombination,fächerkombinationen,kombinationsmöglichkeiten der fächer,kombinationsmöglichkeit des fachs,kombinationsmöglichkeit des faches,kombinationen der fächer,kombination des fachs,kombination des faches
+1HF:erstes hauptfach,erstes hf, 1.hf,1. hf,1.hauptfach,1. hauptfach,1tes hf,1tes hauptfach,1 hf,1hf,1 hauptfach,1hauptfach
+2HF:zweites hauptfach,zweites hf,zweitem hauptfach,zweitem hf,zweiten hauptfach,zweiten hf,2.hf,2. hf,2.hauptfach,2. hauptfach,2tes hf,2tes hauptfach,2ten hf,2ten hauptfach,2tem hf,2tem hauptfach,2 hf,2hf,2 hauptfach,2hauptfach
+1NF:erstes nebenfach,erstes nf, 1.nf,1. nf,1.nebenfach,1. nebenfach,1tes nf,1tes nebenfach,1 nf,1nf,1 nebenfach,1nebenfach
+2NF:zweites nebenfach,zweites nf,zweitem nebenfach,zweitem nf,zweiten nebenfach,zweiten nf,2.nf,2. nf,2.nebenfach,2. nebenfach,2tes nf,2tes nebenfach,2ten nf,2ten nebenfach,2tem nf,2tem nebenfach,2 nf,2nf,2 nebenfach,2nebenfachfach,zwei nebenfächer,zwei nf,2 nf,2 nebenfächer,2.nf,2.nebenfächer,2 nf,2 nebenfächer
+BA:bachelorstudiengang,b.a.,bachelor of arts,bachelor of science
+BAArbeit:bachelor arbeit,bachelorarbeit,bachelor arbeiten,bachelorarbeiten,b.a. arbeit,b.a. arbeiten,abschlussarbeit,abschlussarbeiten
+LP:leistungspunkt,leistungspunkten,lps,ects,ects-punkt,ects-punkte,credits,credit points,credit point,creditspoint,creditpoints,punkt,punkte(bekommt[2];bekomme[2]),european credit transfer system
+BIB:bibliothek
+CIP:cippool,cip pool,computerraum,computerräume,computersaal,computersäle
+PT:philosophie-theologie,philosophie theologie,philosophie und theologie,philosophisch-theologische,philosophisch-theologische fakultät,philosophisch theologische fakultät
+KLAUSUR:prüfung,prüfungen,test,tests,examen,examina
+ALTKLAUSUR:probeklausur,probeklausuren,probeprüfung,probeprüfungen,altklausur,altklausuren,alte klausuren,alte klausur,alte prüfung,alte prüfungen,alte examen,alte examina,alte test,alte tests,alter test,probetest,probetests,alttest,alttests,altprüfung,altprüfungen,altexamen,altexamina
