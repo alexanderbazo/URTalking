@@ -31,13 +31,13 @@ class StopwordReductionModule(AimlizerModule):
 	
 	def __init__(self, stopwordlist):
 		global list
-		with open(stopwordlist, 'r') as f:
-			list = f.readlines()
+		list = open(stopwordlist,'r').read().splitlines()
+		list = [word.upper() for word in list]
 
 	def process(self, str):
 		out = ""
 		for(word) in str.split(" "):
-			if(word not in list):
+			if(word.upper() not in list):
 				out += word+" "
 		out = out[:-1]
 		return out

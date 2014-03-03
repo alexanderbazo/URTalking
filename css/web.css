@@ -121,6 +121,10 @@ body #output .line {
 	padding:5px;
 }
 
+body #output .debug {
+	color:rgb(255,10,10);
+}
+
 body #output .line a{
 	color:rgb(239,127,26);
 }

@@ -14,8 +14,9 @@
 			logDialog(time(), session_id(), "bot", $result);
 			return $result;
 		} else {
+			$tmp = explode("<span class='debug'>", $result);
 			logDialog(time(), session_id(), "bot", "Daran hat der Autor meiner AIML-Datei nicht gedacht. Tut mir leid.");
-			return "Daran hat der Autor meiner AIML-Datei nicht gedacht. Tut mir leid.";
+			return "Daran hat der Autor meiner AIML-Datei nicht gedacht. Tut mir leid. <span class='debug'>".$tmp[1];
 		}
 		
 	}

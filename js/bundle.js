@@ -1,4 +1,5 @@
 var speak = true;
+var debug = true;
 
 function init()
 {
@@ -80,6 +81,9 @@ function writeToOutput(msg, source)
 	div.innerHTML = div.innerHTML + '<span class="line"><span class="' + source + '">' + source + ': </span>' + msg + '</span>';
 	div.scrollTop = div.scrollHeight;
 	$("#output .line a").attr("target","_blank");
+	if(debug == false) {
+		$("#output .debug").hide();
+	}
 	setupCourseList();
 	if(source == "elise" && speak == true) {
 	}

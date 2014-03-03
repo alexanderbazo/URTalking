@@ -62,7 +62,7 @@ def setupAimlizer():
 
 def processRequest(str):
 	str = aimlizer.aimlize(str)
-	print(aiml_kernel.respond(str, aiml_session))
+	print(aiml_kernel.respond(str, aiml_session)+" <span class='debug'>(aimlized query: "+str+")</span>")
 	saveSession()
 
 def saveSession():
