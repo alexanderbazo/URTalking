@@ -36,6 +36,18 @@ body #beta:hover {
 	cursor:pointer;
 }
 
+body #logo {
+	height:200px;
+	width:300px;
+	
+	position:absolute;
+	top:10px;
+	left:10px;
+	
+	background-image:url('img/logo.png');
+	background-repeat:no-repeat;
+}
+
 body #edit_aiml {
 	display:block;
 	position:absolute;
@@ -64,30 +76,112 @@ body #edit_aiml:hover {
 body h1 {
 	display:block;
 	width:900px;
-	margin: 0px auto;
+	
+	margin: 20px auto 0px auto;
 	padding:10px;
 
 	background-color:rgb(30,30,30);
 
-	color:rgb(239,127,26);
+	color:rgb(255,176,96);
 	
 	
 	font-size:1.8em;
 }
 
 body h1 .highlight {
-	color:rgb(239,127,26);
+	color:rgb(255,176,96);
 }
 
 body h1 .sub {
 	color:rgb(250,250,250);
 }
 
+body #content {
+	display:block;
+	width:918px;
+	height:700px;
+	margin: 0px auto 0px auto;
+	
+		overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body #content a {
+	text-decoration:none;
+	color:rgb(30,30,30);
+}
+
+
+body #content ul {
+	list-style-type: none;
+}
+
+body #content ul li {
+	line-height:40px;
+}
+
+body #content ul .pdf {
+	background:url('img/pdf.png');
+	background-repeat:no-repeat;
+   	padding-left: 40px;
+	background-size:32px 32px;
+	background-position:0px 4px;
+}
+
+body #content ul .zip {
+	background:url('img/zip.png');
+	background-repeat:no-repeat;
+   	padding-left: 40px;
+	background-size:32px 32px;
+	background-position:0px 4px;
+}
+
+body #content ul .txt {
+	background:url('img/txt.png');
+	background-repeat:no-repeat;
+   	padding-left: 40px;
+	background-size:32px 32px;
+	background-position:0px 4px;
+}
+
+body #content ul .html {
+	background:url('img/html.png');
+	background-repeat:no-repeat;
+   	padding-left: 40px;
+	background-size:32px 32px;
+	background-position:0px 4px;
+}
+
+body #content ul .py {
+	background:url('img/py.png');
+	background-repeat:no-repeat;
+   	padding-left: 40px;
+	background-size:32px 32px;
+	background-position:0px 4px;
+}
+
+body #content::-webkit-scrollbar {
+    width: 10px;
+}
+
+body #content::-webkit-scrollbar-track {
+	background: rgba(30,30,30,0);
+}
+
+body #content::-webkit-scrollbar-thumb {
+    background: rgba(144,32,32,1);
+}
+
+body #content::-webkit-scrollbar-thumb:window-inactive {
+	background: rgb(30,30,30);
+}
+
+
 body #output {
 	display:block;
 	width:918px;
 	height:500px;
-	margin: 30px auto 0px auto;
+	margin: 0px auto 0px auto;
 
 	overflow-y: scroll;
     overflow-x: hidden;
@@ -104,11 +198,11 @@ body #output::-webkit-scrollbar {
 }
 
 body #output::-webkit-scrollbar-track {
-	background: rgb(30,30,30);
+	background: rgba(30,30,30,0.8);
 }
 
 body #output::-webkit-scrollbar-thumb {
-    background: rgba(255,46,157,0.8);
+    background: rgba(144,32,32,1);
 }
 
 body #output::-webkit-scrollbar-thumb:window-inactive {
@@ -126,16 +220,16 @@ body #output .debug {
 }
 
 body #output .line a{
-	color:rgb(239,127,26);
+	color:rgb(255,176,96);
 }
 
 body #output .me {
 	font-style:bold;
-	color:rgb(239,127,26);
+	color:rgb(255,176,96);
 }
 
 body #output .elise {
-	color:rgb(0,184,107);
+	color:rgb(144,32,32);
 }
 
 body #output .course {
@@ -145,7 +239,7 @@ body #output .course {
 
 body #output .course:hover {
 	cursor:pointer;
-	color:rgb(239,127,26);
+	color:rgb(255,176,96);
 }
 
 body input {
@@ -190,11 +284,23 @@ body #course_info h1 {
 }
 
 body #course_info .course_nr {
-	color:rgb(239,127,26);
+	color:rgb(255,176,96);
 	font-style:bold;
 }
 
-body #course_info .info {
+body #course_info .course_title {
+	display:block;
+	font-family: 'Exo-300', sans-serif;
+	color:rgb(250,250,250);
+}
+
+body #course_info .course_modules {
+	display:block;
+	font-family: 'Exo-300', sans-serif;
+	color:rgb(250,250,250);
+}
+
+body #course_info .course_info {
 	display:block;
 	font-family: 'Exo-300', sans-serif;
 	color:rgb(250,250,250);
@@ -211,5 +317,25 @@ body footer {
 }
 
 body footer a {
-	color:rgb(239,127,26);
+	color:rgb(255,176,96);
+}
+
+body #back_to_chat {
+	display:block;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:80px;
+	height:50px;
+	background-image:url('img/icon_bot.png');
+	background-repeat:no-repeat;
+	background-size:40px 53px;
+	background-position:center 5px;
+	
+	padding:2px;
+	padding-top:60px;
+	text-align:center;
+	text-decoration:none;
+	font-size:0.8em;
+	color:rgb(30,30,30);
 }

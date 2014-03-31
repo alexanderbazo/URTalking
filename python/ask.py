@@ -55,9 +55,9 @@ def setupAiml():
 def setupAimlizer():
 	global aimlizer
 	aimlizer = Aimlizer()
-	aimlizer.addModule(StopwordReductionModule(stopwords))
-	aimlizer.addModule(NormalizerModule())
 	#aimlizer.addModule(SpellCheckerModule(spellchecker_file))
+	#aimlizer.addModule(StopwordReductionModule(stopwords))
+	aimlizer.addModule(NormalizerModule())
 	aimlizer.addModule(ReplacerModule(dict_folder))
 
 def processRequest(str):

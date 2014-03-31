@@ -1,5 +1,5 @@
 var speak = true;
-var debug = true;
+var debug = false;
 
 function init()
 {
@@ -50,6 +50,7 @@ function queryDatabase(query, value, callback) {
 
 function processServerResponse(response)
 {
+	console.log(response);
 	writeToOutput(decodeURI(response), 'elise');
 }
 
@@ -59,8 +60,11 @@ function setupCourseList() {
 		$('#course_info .course_nr').html($(e.target).attr('nr'));
 		$('#course_info').css('top', event.pageY + 20);
 		$('#course_info').css('left', event.pageX);
-		queryDatabase("COURSE_ITLE", $(e.target).attr('nr'), function(data) {
-			$('#course_info .title').html(data);
+		queryDatabase("COURSE_TITLE", $(e.target).attr('nr'), function(data) {
+			$('#course_info .course_title').html(data);
+		});
+		queryDatabase("COURSE_MODULE", $(e.target).attr('nr'), function(data) {
+			$('#course_info .course_modules').html('Module: '+data);
 		});
 	});
 	$('.course').mouseleave(function() {

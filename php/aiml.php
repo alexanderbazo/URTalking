@@ -25,13 +25,19 @@
 		$prologrequest = strpos($result, 'prolog');
 		
 		if($prologrequest === false) {
-			echo $result;
+			return $result;
 		} else {
+			$pos = strpos($result, '(aimlized query:');
+			$tmp = substr($result, $pos, strlen($result)-1);
+			$result = substr($result, 0, $pos);
+			$query = substr($result, $pos, strlen($result)-1);
 			$result = ask_prolog($result);
 			if($result == '' || $result == 'FALSE') {
-				return 'Diese Frage kann ich so leider nicht beantworten. Tut mir leid.';
+				return 'Diese Frage kann ich so leider nicht beantworten. Tut mir leid. <span class="debug">'.$tmp.'</span>';
 			} else {
-				return $result;
+				$pos = strpos($result, '<span');
+				$result = substr($result, $pos, strlen($result)-1);
+				return $result.' <span class="debug">'.$tmp.'</span>';
 			}
 		}
 	}
