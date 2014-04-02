@@ -1,6 +1,8 @@
 init:-
+	ensure_loaded('./kurse_vorlesungsverzeichnis.pl'),
 	ensure_loaded('./vvz_ss2013.pl'),
-	ensure_loaded('./module_inf-mi-mewi.pl').
+	ensure_loaded('./module_inf-mi-mewi.pl'),
+	ensure_loaded('./module_kurse.pl').
 
 :-
 	init.
@@ -29,6 +31,9 @@ findAllCurrentCourses(SUBJECT,BAG) :-
 findAllModules(SUBJECT,BAG) :-
 	findall(BAG, subjectModules(SUBJECT), _).
 
+findAllModulesForCourse(COURSENR,BAG) :-
+	findall(BAG, modulesForCouse(COURSENR), _).
+
 currentCourses(SUBJECT) :-
 	vorlesungaktuell(ID,NR,TITLE),
 	sub_string(ID,0,3,_,SUBJECTID),
@@ -55,6 +60,16 @@ subjectModules(SUBJECT) :-
 coursetitle(COURSENR) :-
 	vorlesungaktuell(_, COURSENR, COURSETITLE),
 	write(COURSETITLE).
+
+modulesForCouse(COURSENR) :-
+	vorlesungaktuell(ID, COURSENR, _),
+	kurse_vorlesungsverzeichnis(ID,_,MODUL,LP),
+	concat(' ', MODUL, TMP),
+	concat(TMP, '(', TMP2),
+	concat(TMP2, LP, TMP3),
+	concat(TMP3, '), ', RESULT),
+	write(RESULT).
+
 
 compareStrings(S1, S2):-
 	name(S1, X),

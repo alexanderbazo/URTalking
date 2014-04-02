@@ -62,29 +62,24 @@ class ReplacerModule(AimlizerModule):
 	replacement_dict = {}
 	context_dict = {}
 	
-	def __init__(self, dictionary_folder):
-		self.loadDictionaries(dictionary_folder)
+	def __init__(self, dictionary_file):
+		self.loadDictionaries(dictionary_file)
 		
-	def loadDictionaries(self, dictionary_folder):
+	def loadDictionaries(self, dictionary_file):
 		global replacement_dict
-		from os import walk
-		files = []
-		for(dirpath, dirnames, filenames) in walk(dictionary_folder):
-			files.extend(filenames)
-			break
-		for filename in files:
-			if not ".dict" in filename:
-				continue
-			with open(dictionary_folder+"/"+filename) as file:
-				for line in file.readlines():
-					if line[0:2] == "//":
-						continue
-					parts = line.split(":")
-					key = parts[0]
+		with open(dictionary_file) as file:
+			for line in file.readlines():
+				if line[0:2] == "//":
+					continue
+				parts = line.split(":")
+				key = parts[0]
+				try:
 					values = parts[1].split(",")
-					for value in values:
-						if(self.extractNeighborContext(value, key) == 0):
-							self.replacement_dict[value.rstrip('\n').upper()] = key.upper()
+				except IndexError:
+					print(values)
+				for value in values:
+					if(self.extractNeighborContext(value, key) == 0):
+						self.replacement_dict[value.rstrip('\n').upper()] = key.upper()
 
 	def extractNeighborContext(self, str, key):
 		global context_dict
@@ -140,7 +135,12 @@ class ReplacerModule(AimlizerModule):
 				tmp = ""
 		return tmp
 
-
+class FinalizerModule(AimlizerModule):
+	
+	def process(self, str):
+		ulist = []
+		[ulist.append(x) for x in str.split() if x not in ulist]
+		return ' '.join(ulist)
 
 
 

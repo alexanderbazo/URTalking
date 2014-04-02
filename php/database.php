@@ -18,14 +18,15 @@
 	
 	function getCourseTitle($course_nr)
 	{
-		echo "coursetitle('".$course_nr."'),halt";
-		return ask_prolog("coursetitle('".$course_nr."'),halt");
+		$tmp = ask_prolog_politely("coursetitle(".$course_nr."),halt");
+		return $tmp;
 	
 	}
 	
 	function getCourseModules($course_nr)
 	{
-		return "XX";
+		$tmp = ask_prolog_politely("findAllModulesForCourse(".$course_nr.",X),halt");
+		return $tmp;
 	}
 	
 	

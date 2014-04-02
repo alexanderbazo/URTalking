@@ -64,7 +64,8 @@ function setupCourseList() {
 			$('#course_info .course_title').html(data);
 		});
 		queryDatabase("COURSE_MODULE", $(e.target).attr('nr'), function(data) {
-			$('#course_info .course_modules').html('Module: '+data);
+			data = data.substring(0, data.length - 2)
+			$('#course_info .course_modules').html(data);
 		});
 	});
 	$('.course').mouseleave(function() {

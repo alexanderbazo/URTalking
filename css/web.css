@@ -289,13 +289,15 @@ body #course_info .course_nr {
 }
 
 body #course_info .course_title {
-	display:block;
+	margin-left:3px;
 	font-family: 'Exo-300', sans-serif;
 	color:rgb(250,250,250);
 }
 
 body #course_info .course_modules {
 	display:block;
+	margin-top:5px;
+	font-size:0.8em;
 	font-family: 'Exo-300', sans-serif;
 	color:rgb(250,250,250);
 }
