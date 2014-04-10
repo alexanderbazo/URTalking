@@ -209,5 +209,5 @@ def restoreSession():
 getRequest()
 setupAiml()
 setupAimlizer()
-test()
-#processRequest(aiml_request)
+#test()
+processRequest(aiml_request)
