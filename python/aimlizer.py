@@ -1,5 +1,7 @@
 import string
 import re
+import codecs
+import sys
 
 from spellchecker import *
 
@@ -10,6 +12,7 @@ class Aimlizer:
 		self.modules.append(module)
 
 	def aimlize(self, string):
+		string  = string.encode('utf-8')
 		for(module) in self.modules:
 			string = module.process(string)
 		return string
@@ -22,24 +25,33 @@ class AimlizerModule:
 class NormalizerModule(AimlizerModule):
 
 	def process(self, str):
-		str = str.translate(string.maketrans("",""), string.punctuation)
+		exclude = set(string.punctuation)
+		str = ''.join(ch for ch in str if ch not in exclude)
+		
+		str = re.sub('/',' ',str)
+		str = re.sub('-',' ',str)
 		str = re.sub(' +',' ',str)
-		return str
+
+		#print("Normalizer: " + str)
+		return str.upper()
 
 class StopwordReductionModule(AimlizerModule):
 	list = []
 	
 	def __init__(self, stopwordlist):
 		global list
-		list = open(stopwordlist,'r').read().splitlines()
-		list = [word.upper() for word in list]
+		file = codecs.open(stopwordlist, 'r', 'utf-8')
+		words = file.read().splitlines()
+		self.list = [word.strip().upper() for word in words]
+		file.close()
 
 	def process(self, str):
 		out = ""
 		for(word) in str.split(" "):
-			if(word.upper() not in list):
+			if(word.upper() not in self.list):
 				out += word+" "
 		out = out[:-1]
+		#print("Stopwords: " + out)
 		return out
 
 class SpellCheckerModule(AimlizerModule):
@@ -55,85 +67,94 @@ class SpellCheckerModule(AimlizerModule):
 			correction = self.sp.correct(word)
 			out += correction+" "
 		out = out[:-1]
+		#print("Spellchecker: " + out)
 		return out
 
 
 class ReplacerModule(AimlizerModule):
-	replacement_dict = {}
-	context_dict = {}
+	dict = []
+	file = ""
 	
 	def __init__(self, dictionary_file):
 		self.loadDictionaries(dictionary_file)
 		
 	def loadDictionaries(self, dictionary_file):
-		global replacement_dict
-		with open(dictionary_file) as file:
+		global dict,file
+		self.file = dictionary_file
+		
+		with codecs.open(dictionary_file, 'r', 'utf-8') as file:
 			for line in file.readlines():
+				line = line.encode('utf-8').strip()
+				line.replace(': ', ':')
 				if line[0:2] == "//":
 					continue
+				if line == "":
+						continue
 				parts = line.split(":")
 				key = parts[0]
 				try:
-					values = parts[1].split(",")
+					tmp = parts[1]
+					values = re.sub("\(([^)]+)\)", lambda x:x.group(0).replace(',',';'), tmp)
+					values = values.split(",")
+					
 				except IndexError:
-					print(values)
+					continue
 				for value in values:
-					if(self.extractNeighborContext(value, key) == 0):
-						self.replacement_dict[value.rstrip('\n').upper()] = key.upper()
-
-	def extractNeighborContext(self, str, key):
-		global context_dict
-		if  not "(" in str:
-			return 0
-
-		tmp = str[str.find("(")+1:str.find(")")]
-		str = str[0:str.find("(")]
-		self.context_dict[str.rstrip('\n').upper()] = key.upper()+","+tmp
-		return 1
+					if  not "(" in value:
+						tmp = {'word': value.strip().upper(), 'replacement': key.strip().upper(), 'context': '', 'distance': ''}
+						self.dict.append(tmp)
+					else:
+						str = value[0:value.find("(")].strip()
+						tmp = value[value.find("(")+1:value.find(")")]
+						for context in tmp.split(";"):
+							neighbour = context[0:context.find("[")]
+							count = context[context.find("[")+1:context.find("]")]
+							tmp = {'word': str.strip().upper(), 'replacement': key.strip().upper(), 'context': neighbour.strip().upper(), 'distance': count}
+							self.dict.append(tmp)
+				
 
 
 	def process(self, str):
-		return self.replaceTokens(str)
+		tmp = self.replaceTokens(str)
+		return tmp
 
 	def replaceTokens(self, str):
 		out = str
 		words = str.split(" ")
 		word_count = len(words)
 		replacement = ""
-		
 		for i in range(0, word_count):
 			for j in reversed(range(0, word_count+1)):
-				phrase = " ".join(words[i:j])
-				replacement = self.replaceTokenInContext(phrase, str)
-				if(replacement != ""):
-					out = out.replace(phrase, replacement);
+				phrase = " ".join(words[i:j]).upper()
+				if phrase == "":
+					continue
+				#print(phrase)
+				replacement = self.replacePhrase(phrase, str)
+				if(replacement != ''):
+					out = out.replace(" "+phrase+" ", " "+replacement+" ");
 				
+		#print("Replacer (" + self.file + "):" + out)
 		return out
 
-	def replaceTokenInContext(self, phrase, str):
+
+	def replacePhrase(self, phrase, str):
 		list = str.split(" ")
-		tmp = ""
-		try:
-			tmp = self.context_dict[phrase.upper()]
-			replacement = tmp[0:tmp.find(",")]
-			tokens = tmp[tmp.find(",")+1:len(tmp)]
-			for token in tokens.split(";"):
-				word = token[0:token.find("[")]
-				count = token[token.find("[")+1:token.find("]")]
-				if word in list:
-					distance = abs(list.index(phrase) - list.index(word))
-					if distance <= count:
-						return replacement
-				try:
-					tmp = self.replacement_dict[phrase.upper()]
-				except KeyError:
-					tmp = ""
-		except KeyError:
-			try:
-				tmp = self.replacement_dict[phrase.upper()]
-			except KeyError:
-				tmp = ""
-		return tmp
+		for word in self.dict:
+			test = word['word']
+			if phrase == test:
+				distance = word['distance']
+				if distance == '':
+					return word['replacement']
+				else:
+					context = word['context']
+					try:
+						delta = abs(list.index(phrase) - list.index(context))
+						if delta <= distance:
+							return word['replacement']
+					except ValueError:
+						continue
+
+		return ''
 
 class FinalizerModule(AimlizerModule):
 	

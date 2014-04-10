@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# -*- coding: iso-8859-1 -*-
+
 
 import sys
 import getopt
@@ -8,6 +10,7 @@ import cStringIO
 import marshal
 import itertools
 import string
+import codecs
 
 
 
@@ -24,6 +27,9 @@ spellchecker_file = ""
 replacement_dict = {}
 aimlizer = ""
 stopwords = ""
+testfile = ""
+max_permutations = ""
+testerrors = 0
 
 @contextlib.contextmanager
 def nostdout():
@@ -33,8 +39,8 @@ def nostdout():
  	sys.stdout = save_stdout
 
 def getRequest():
-	global aiml_request, aiml_file, aiml_session, dict_folder, spellchecker_file,stopwords
-	myopts, args = getopt.getopt(sys.argv[1:],"q:a:s:d:c:l:")
+	global aiml_request, aiml_file, aiml_session, dict_folder, spellchecker_file,stopwords,testfile,max_permutations
+	myopts, args = getopt.getopt(sys.argv[1:],"q:a:s:d:c:l:t:p:")
 	for o, a in myopts:
 		if o == '-q':
 			aiml_request = a
@@ -48,6 +54,10 @@ def getRequest():
 			spellchecker_file = a
 		elif o == '-l':
 			stopwords = a
+		elif o == '-t':
+			testfile = a
+		elif o == '-p':
+			max_permutations = a
 		else:
 			print("Usage: %s -q QUERY -a AIML-FILE -s SESSION-ID -d DICTONARY-FOLDER -c WORD-LIST FOR SPELLCHECKER" % sys.argv[0])
 
@@ -63,8 +73,8 @@ def setupAimlizer():
 	global aimlizer
 	aimlizer = Aimlizer()
 	
+	
 	#aimlizer.addModule(SpellCheckerModule(spellchecker_file))
-	aimlizer.addModule(StopwordReductionModule(stopwords))
 	aimlizer.addModule(NormalizerModule())
 	
 	dictonaries = [f for f in listdir(dict_folder) if isfile(join(dict_folder,f))]
@@ -72,10 +82,14 @@ def setupAimlizer():
 		if file.endswith(".dict"):
 			aimlizer.addModule(ReplacerModule(dict_folder+"/"+file))
 
+
+	aimlizer.addModule(StopwordReductionModule(stopwords))
 	aimlizer.addModule(FinalizerModule())
 
 def processRequest(str):
+	str = unicode(str, "utf-8")
 	str = aimlizer.aimlize(str)
+		
 	last_query = restoreQuery()
 	permutations = list(itertools.permutations(str.split(), len(str.split())))
 	valid_queries = []
@@ -100,6 +114,62 @@ def processRequest(str):
 	saveSession()
 	if len(valid_queries) > 0:
 		saveQuery(valid_queries[0], aiml_session)
+
+def test():
+	if testfile == "":
+		return
+	else:
+		file = codecs.open(testfile, 'r', 'utf-8')
+		questions = file.read().split('\n')
+	
+		for question in questions:
+			#print(question.strip().upper())
+			testRequest(question)
+			
+		file.close()
+
+def testRequest(str):
+	global testerrors
+	input = str
+	str = aimlizer.aimlize(str)
+	
+	last_query = restoreQuery()
+	permutations = list(itertools.permutations(str.split(), len(str.split())))
+	
+	valid_queries = []
+	
+	if len(str.split()) > int(max_permutations):
+		permutations = [str]
+	
+	ok = -1;
+		
+	for permutation in permutations:
+		query = ' '.join(permutation)
+		try:
+			tmp_1 = aiml_kernel.respond(last_query, aiml_session)
+			tmp = aiml_kernel.respond(query, aiml_session)
+			#print(tmp)
+			if tmp != '':
+				ok = 1
+				print("\""+input.encode('utf-8')+"\",\""+str+"\",\"OK\"")
+		except (UnicodeDecodeError, UnicodeEncodeError) as e:
+			#print("aiml-error at: " + input)
+			#print(e)
+			continue
+	
+	if ok == -1:
+		try:
+			print("\""+input.encode('utf-8')+"\",\""+str+"\",\"FAILED\"")
+		except (UnicodeDecodeError, UnicodeEncodeError) as e:
+			#print("print-error at: " + input)
+			#print(e)
+			pass
+			
+	saveSession()
+	if len(valid_queries) > 0:
+		saveQuery(valid_queries[0], aiml_session)
+
+
 
 def saveQuery(query, aiml_session):
 	sessionFile = file("../sessions/last_query_"+aiml_session+".ses", "wb")
@@ -139,4 +209,5 @@ def restoreSession():
 getRequest()
 setupAiml()
 setupAimlizer()
-processRequest(aiml_request)
+test()
+#processRequest(aiml_request)

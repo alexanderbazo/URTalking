@@ -1,5 +1,5 @@
 var speak = true;
-var debug = false;
+var debug = true;
 
 function init()
 {
