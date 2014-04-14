@@ -19,7 +19,6 @@
 <ul>
 <a href="./docs/Website.zip"><li class="html">Finaler Stand dieser Website (HTMl,JS,PHP - ZIP-Archiv)</li></a>
 <a href="./docs/Aimlizer.zip"><li class="py">Finaler Stand der Python-Brücke (ZIP-Archiv)</li></a>
-<a href="./docs/Prolog-Bridge.zip"><li class="zip">Finaler Stand der Prolog-Brücke (ZIP-Archiv)</li></a>
 <a href="./docs/Prolog-Code.zip"><li class="zip">Verwendeter Prolog-Code (ZIP-Archiv)</li></a>
 </ul>
 <h2>Datenbasis</h2>
@@ -35,8 +34,8 @@
 </ul>
 <h3>Eretzungswörterbücher</h3>
 <ul>
-<a href="./docs/dict_01.txt"><li class="txt">Wörterbuch, Ersetzungsphase 1 (Initiale Ersetzungen)</li></a>
-<a href="./docs/dict_01.txt"><li class="txt">Wörterbuch, Ersetzungsphase 2 (Feinersetzungen)</li></a>
+<a href="./docs/01_dict.dict"><li class="txt">Wörterbuch, Ersetzungsphase 1 (Initiale Ersetzungen)</li></a>
+<a href="./docs/02_dict.dict"><li class="txt">Wörterbuch, Ersetzungsphase 2 (Feinersetzungen)</li></a>
 </ul>
 </div>
 
