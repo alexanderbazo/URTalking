@@ -202,11 +202,14 @@ body #editor input.single_line {
 	font-size:1em;
 }
 
-body #editor input.multiline {
+body #editor input.multi_line {
 	width:600px;
-	height:25px;
+	height:100px;
 	line-height:25px;
 	margin-top:15px;
+
+
+  resize: none;
 
 	border-style:solid;
 	border-width:0px 0px 1px 0px;
