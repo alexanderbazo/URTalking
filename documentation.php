@@ -13,7 +13,7 @@
 <div id="content">
 <h2>Dokumente</h2>
 <ul>
-<a href="./docs/Transkription_Datenerhebung.pdf"><li class="pdf">Seminararbeit mit technischer Dokumentation (Bazo, Rak, Schlesinger - Wintersemester 2013/14)</li></a>
+<a href="./docs/DokumentationUR-Talking.pdf"><li class="pdf">Seminararbeit mit technischer Dokumentation (Bazo, Rak, Schlesinger - Wintersemester 2013/14)</li></a>
 </ul>
 <h2>Software</h2>
 <ul>
