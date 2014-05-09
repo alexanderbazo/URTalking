@@ -17,7 +17,7 @@ function init()
 
 function setupDatasets() {
 	topics_json = {'topics': {}};
-	
+
 	Array.prototype.clean = function(deleteValue) {
 		for (var i = 0; i < this.length; i++) {
 			if (this[i] == deleteValue) {
@@ -33,15 +33,15 @@ function setupUI() {
 	$('#save_changes').click(updateAimlOnServer);
 	$('#new_entry .cancel').click(cancelCurrentAction);
 	$('#new_entry .add').click(completeCurrentAction);
-	
+
 	$('#topic_list .add').click(function(){
 		startNewAction("Thema");
 	});
 	$('#category_list .add').click(function(){
 		startNewAction("Frage");
 	});
-	
-	
+
+
 }
 
 /*
@@ -51,11 +51,11 @@ function setupUI() {
 function showTopicList() {
 	list = $('#topic_list ul');
 	$(list).empty();
-	
+
 	$.each(Object.keys(topics_json.topics), function(index, value) {
 		$(list).append('<li topic="'+value+'" class="topic_entry">'+value+'</li>');
 	});
-	
+
 	$(list).children().unbind();
 	$(list).children().click(function(e) {
 		$('#topic_list ul').children().removeClass('selected');
@@ -93,7 +93,7 @@ function showCategoryList() {
 	topic = current_topic;
 	list = $('#category_list ul');
 	$(list).empty();
-	
+
 	index = 0;
 	for(var value in topics_json.topics[topic]) {
 		value = topics_json.topics[topic][value];
@@ -105,16 +105,16 @@ function showCategoryList() {
 			indexstring = "0"+index;
 		}
 		$(list).append('<li topic ="'+value.topic+'" index="'+value.index+'" class="category_entry">'+indexstring+'|'+value.pattern+'</li>');
-		
+
 		index++;
 	}
-	
-	
+
+
 	$(list).children().unbind();
 	$(list).children().click(function(e) {
 		$('#category_list ul').children().removeClass('selected');
 		$(e.target).addClass('selected');
-		
+
 		topic = $(e.target).attr('topic');
 		index = $(e.target).attr('index');
 		categoryChanged(index);
@@ -130,27 +130,27 @@ function showCategory() {
 	category = getCategoryByIndex(current_topic, current_category_index);
 	$('#editor #pattern').val(category.pattern);
 	$('#editor #that').val(category.that);
-	
+
 	$('#editor').find('.template').remove();
 	$.each(category.templates, function(index, value) {
 		label_index = index+1;
 		tmp = value.replace(/"/g, '&quot;').trim();
-		template = '<input class="single_line template" id="template-'+index+'" type="text" value="'+tmp+'" /><span class="input_label template">Template '+label_index+'</span>';
+		template = '<textarea class="multi_line template" id="template-'+index+'">'+tmp+'</textarea><span class="input_label template">Template '+label_index+'</span>';
 		$(template).insertBefore('#editor .newtemplate');
 	});
-	
+
 	$('#editor input').unbind();
 	$('#editor input').keyup(function(e) {
 		onInputValueChanged(e);
 	});
-	
+
 }
 
 function categoryChanged(category_index) {
 	current_category_index = category_index;
 	showCategory();
 }
-		   
+
 function categoryAdded(category_index) {
    current_category_index = category_index;
    showCategoryList();
@@ -168,7 +168,7 @@ function getCategoryByIndex(topic, index) {
 	}
 	return undefined;
 }
-		   
+
 function addCategory(topic, index, category) {
 	if(topics_json.topics[topic] == undefined) {
 		addTopic(topic);
@@ -178,7 +178,7 @@ function addCategory(topic, index, category) {
 		topics_json.topics[topic][index] = category;
 	}
 }
-		   
+
 function removeCurrentCategory() {
 	removeCategoryIdentifiedByIndex(current_topic, current_category_index);
 }
@@ -198,7 +198,7 @@ function removeCategoryIdentifiedByIndex(topic, index) {
 	$('#category_list ul li').first().addClass('selected');
 }
 
-		   
+
 /*
 	Server Actions
 */
@@ -207,7 +207,7 @@ function updateAimlOnServer() {
 	$('#upload .button').css('visibility', 'hidden');
 	$('#upload').css('visibility', 'visible');
 	$('body #loading').css('visibility', 'visible');
-	
+
 	passwordhash = $.md5($('#password').val());
 	categoriesonly = {};
 	index = 0;
@@ -239,7 +239,7 @@ function getAndProcessAimlXML() {
 		success: parseXML
 	});
 }
-		   
+
 function parseXML(data) {
 	xmlDoc = $.parseXML(data);
 	$xml = $(xmlDoc);
@@ -251,10 +251,10 @@ function parseXML(data) {
 			}
 			pattern = $(value).find('pattern').html();
 			that = $(value).find('that').html();
-				  
+
 			templates = new Array();
 			template_node = $(value).find('template');
-				  
+
 			if($(template_node).find('li').length > 0) {
 				$.each($(template_node).find('li'), function(index,value) {
 					tmp = $(value).html().trim();
@@ -263,15 +263,15 @@ function parseXML(data) {
 			} else {
 				templates.push($(template_node).html());
 			}
-				  
+
 			category = {index:index,topic:topic,pattern:pattern,that:that,templates:templates};
 			addCategory(topic, index, category);
 	});
-		   
+
 	showTopicList();
 	$('#topic_list ul li').first().addClass('selected');
 	showCategoryList();
-	
+
 	delayUIafterLoading(1);
 }
 
@@ -280,7 +280,7 @@ function htmlDecode(input){
 	e.innerHTML = input;
 	return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
 }
-		   
+
 function onServerUpdateResult(data) {
 	console.log(data);
 	delayUIafterSaving(data, 1);
@@ -344,22 +344,22 @@ function delayUIafterSaving(data, seconds) {
 }
 
 function addNewTemplateToEditor() {
-	index = $('#editor .single_line.template').length;
+	index = $('#editor .multi_line.template').length;
 	label_index = index+1;
-	template = '<input class="single_line template" id="template-'+index+'" type="text" value="" /><span class="input_label template">Template '+label_index+'</span>';
+	template = '<textarea class="multi_line template" id="template-'+index+'"><textarea/><span class="input_label template">Template '+label_index+'</span>';
 	$(template).insertBefore('#editor .newtemplate');
-		   
+
 	$('#editor input').unbind();
 	$('#editor input').keyup(function(e) {
 		onInputValueChanged(e);
 	});
 }
-		   
+
 function discardUploadDialog() {
 	$('#upload').css('visibility', 'hidden');
 	$('#upload .button').css('visibility', 'hidden');
 }
-		   
+
 function startNewAction(type) {
 	current_action = type;
 	$('#new_entry').css("visibility", "visible");
@@ -374,7 +374,7 @@ function startNewAction(type) {
 		default:
 			break;
 	}
-	
+
 	$('#new_entry #entry').val('');
 }
 

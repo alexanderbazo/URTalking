@@ -34,7 +34,7 @@ body #back_to_chat {
 	background-repeat:no-repeat;
 	background-size:40px 53px;
 	background-position:center 5px;
-	
+
 	padding:2px;
 	padding-top:60px;
 	text-align:center;
@@ -87,7 +87,7 @@ body #password {
 	height:20px;
 	line-height:20px;
 
-	
+
 	border-style:solid;
 	border-width:0px 0px 1px 0px;
 	border-color:rgb(250,250,250);
@@ -202,6 +202,19 @@ body #editor input.single_line {
 	font-size:1em;
 }
 
+body #editor input.multiline {
+	width:600px;
+	height:25px;
+	line-height:25px;
+	margin-top:15px;
+
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	border-color:rgb(30,30,30);
+	background-color:rgba(255,255,255,0);
+	font-size:1em;
+}
+
 body #editor .input_label {
 	display:block;
 	margin-bottom:15px;
@@ -213,10 +226,10 @@ body #editor .button {
 	width:100px;
 	height:25px;
 	margin-top:10px;
-	
+
 	border-type:solid;
 	border-width:0px;
-	
+
 	background-color:rgb(255,0,0);
 	font-family: 'Exo-400', sans-serif;
 	color:rgb(250,250,250);
@@ -239,7 +252,7 @@ body #new_entry {
 	height:calc(100% - 50px);
 
 	background-color:rgba(30,30,30,0.9);
-	
+
 	color:rgb(250,250,250);
 	z-index:99999;
 }
@@ -274,13 +287,13 @@ body #new_entry .button {
 	height:25px;
 
 	margin-top:10px;
-	
+
 	cursor:pointer;
-	
+
 	border-type:solid;
 	border-width:2px;
 	border-color:rgb(30,30,30);
-	
+
 	background-color:rgb(239,127,26);
 	font-family: 'Exo-400', sans-serif;
 }
@@ -303,7 +316,7 @@ body #upload {
 	height:calc(100% - 50px);
 
 	background-color:rgba(30,30,30,0.9);
-	
+
 	color:rgb(250,250,250);
 	z-index:99999;
 }
@@ -324,13 +337,13 @@ body #upload .button {
 	width:150px;
 	height:25px;
 	margin-top:10px;
-	
+
 	cursor:pointer;
-	
+
 	border-type:solid;
 	border-width:2px;
 	border-color:rgb(30,30,30);
-	
+
 	background-color:rgb(239,127,26);
 	font-family: 'Exo-400', sans-serif;
 }
@@ -347,10 +360,10 @@ body #loading {
 	height:calc(100% - 50px);
 
 	background-color:rgba(30,30,30,1);
-	
+
 	color:rgb(250,250,250);
 	z-index:99998;
-	
+
 	background-image:url('img/ajax-loader.gif');
 	background-repeat:no-repeat;
 	background-position:center center;
