@@ -202,12 +202,11 @@ body #editor input.single_line {
 	font-size:1em;
 }
 
-body #editor input.multi_line {
+body #editor textarea.multi_line {
 	width:600px;
 	height:100px;
 	line-height:25px;
 	margin-top:15px;
-
 
   resize: none;
 
