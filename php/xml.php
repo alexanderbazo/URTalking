@@ -7,7 +7,7 @@ function getAimlXML() {
 
 function updateAiml($json) {
 	$passwordhash = $_POST['passwordhash'];
-	if($passwordhash != "da5ba29a061f759b443a0a69529b25ab460ad27c") {
+	if($passwordhash != "4e6b4c47634a9ec9662b7ab17044c321") {
 		return -1;
 	}
 
