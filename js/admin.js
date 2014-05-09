@@ -140,7 +140,11 @@ function showCategory() {
 	});
 
 	$('#editor input').unbind();
+	$('#editor textarea').unbind();
 	$('#editor input').keyup(function(e) {
+		onInputValueChanged(e);
+	});
+	$('#editor textarea').keyup(function(e) {
 		onInputValueChanged(e);
 	});
 
@@ -350,7 +354,11 @@ function addNewTemplateToEditor() {
 	$(template).insertBefore('#editor .newtemplate');
 
 	$('#editor input').unbind();
+	$('#editor textarea').unbind();
 	$('#editor input').keyup(function(e) {
+		onInputValueChanged(e);
+	});
+	$('#editor textarea').keyup(function(e) {
 		onInputValueChanged(e);
 	});
 }
