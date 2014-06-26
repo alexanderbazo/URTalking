@@ -238,7 +238,7 @@ function getAndProcessAimlXML() {
 	$.ajax({
 		type: 'POST',
 		url: 'php/api.php',
-		data: 'request=xml',
+		data: {request: 'xml', query: 'xml'},
 		cache: false,
 		success: parseXML
 	});
