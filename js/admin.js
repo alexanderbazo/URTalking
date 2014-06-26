@@ -229,7 +229,7 @@ function updateAimlOnServer() {
 	$.ajax({
 		type: "POST",
 		url: 'php/api.php',
-		data: {'request': 'update', 'passwordhash': passwordhash, 'categories': JSON.stringify(categoriesonly)},
+		data: {'query': 'query', 'request': 'update', 'passwordhash': passwordhash, 'categories': JSON.stringify(categoriesonly)},
 		success: onServerUpdateResult
 	});
 }
@@ -338,9 +338,10 @@ function delayUIafterSaving(data, seconds) {
 			case '-1':
 			   $('#upload .text').html('Fehler bei der Aktualisierung: Falsches Passwort.');
 			   break;
-			default:
+			/**default:
 			   $('#upload .text').html('Fehler bei der Aktualisierung: Unbekannter Fehler.');
 			   break;
+			 */
 		}
 		$('#upload .button').css('visibility', 'visible');
 		$('body #loading').css('visibility', 'hidden');

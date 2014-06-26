@@ -7,7 +7,7 @@ function getAimlXML() {
 
 function updateAiml($json) {
 	$passwordhash = $_POST['passwordhash'];
-	if($passwordhash != "4e6b4c47634a9ec9662b7ab17044c321") {
+	if($passwordhash != "d60be3131110017d89bb3b089028a226") {
 		return -1;
 	}
 
@@ -19,8 +19,8 @@ function updateAiml($json) {
 
 	$file = fopen($new_file_path, 'w');
 	fwrite($file, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<aiml>\n");
-	echo $xml_header;
-	$aiml = $xml_header;
+	#echo $xml_header;
+	#$aiml = $xml_header;
 	foreach (json_decode($json, true) as $value) {
 		$pattern = strtoupper($value['pattern']);
 		$pattern = preg_replace('/[-!.,;:]/', '', $pattern);
