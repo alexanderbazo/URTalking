@@ -12,7 +12,7 @@
 		
 		
 		
-		$result = shell_exec('/opt/local/bin/swipl --quiet -f ../prolog/facts/mi_iw.pl -g '.$request.' 2>&1');
+		$result = shell_exec('swipl.exe --quiet -f ../prolog/facts/mi_iw.pl -g '.$request.' 2>&1');
 		if($parts[1] == "courses") {
 			return "Folgende Kurse werden angeboten: ".substr($result, 0, -2).".";
 		} else if($parts[1] == "modules") {
