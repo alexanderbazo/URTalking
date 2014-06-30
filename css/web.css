@@ -50,7 +50,7 @@ body #logo {
 
 body #edit_aiml {
 	display:block;
-	position:absolute;
+	position:absolute; 
 	left:0px;
 	bottom:0px;
 	width:80px;
@@ -77,7 +77,8 @@ body h1 {
 	display:block;
 	width:900px;
 	
-	margin: 20px auto 0px auto;
+	margin: 110px auto 0px auto; 
+
 	padding:10px;
 
 	background-color:rgb(30,30,30);
