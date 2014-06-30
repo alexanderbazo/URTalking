@@ -24,15 +24,15 @@
 <h2>Datenbasis</h2>
 <ul>
 <a href="./docs/Fragebogen.pdf"><li class="pdf">Fragebogen zur Erhebung möglicher Fragestellungen unter Erstsemestern</li></a>
-<a href="./docs/Transkription_Datenerhebung.pdf"><li class="pdf">Transskription aller erhobenen Fragen (Erstsemesterkurse im Wintersemester 2013/14)</li></a>
-<a href="./docs/Fragen.zip"><li class="zip">Transskription aller erhobenen Fragen (sortiert nach Kursen -  ZIP-Archiv)</li></a>
+<a href="./docs/Transkription_Datenerhebung.pdf"><li class="pdf">Transkription aller erhobenen Fragen (Erstsemesterkurse im Wintersemester 2013/14)</li></a>
+<a href="./docs/Fragen.zip"><li class="zip">Transkription aller erhobenen Fragen (sortiert nach Kursen -  ZIP-Archiv)</li></a>
 </ul>
 <h2>Sprachverarbeitung</h2>
 <h3>Clustering</h3>
 <ul>
-<a href="./docs/clustering_auto.zip"><li class="py">Clustering-Skript und Resultate vom automatischen Clustern der transkripierten Fragen (Python, ZIP-Archiv)</li></a>
+<a href="./docs/clustering_auto.zip"><li class="py">Clustering-Skript und Resultate vom automatischen Clustern der transkribierten Fragen (Python, ZIP-Archiv)</li></a>
 </ul>
-<h3>Eretzungswörterbücher</h3>
+<h3>Ersetzungswörterbücher</h3>
 <ul>
 <a href="./docs/01_dict.dict"><li class="txt">Wörterbuch, Ersetzungsphase 1 (Initiale Ersetzungen)</li></a>
 <a href="./docs/02_dict.dict"><li class="txt">Wörterbuch, Ersetzungsphase 2 (Feinersetzungen)</li></a>
