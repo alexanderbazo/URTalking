@@ -1,5 +1,6 @@
 <?php
 		session_start();
+		require 'config.php';
 		require 'aiml.php';
 		require 'prolog.php';
 		require 'database.php';
@@ -8,8 +9,8 @@
 
 		$request = $_POST['request'];
 		$query = $_POST['query'];
-				
-		
+
+
 		switch ($request) {
 				case 'aiml':
 					echo queryAIML($query, $_POST['file']);
@@ -27,5 +28,5 @@
 					echo 'Error [Invalid request]';
 					break;
 		}
-		
+
 ?>

@@ -14,7 +14,7 @@
 body {
 	background-image:url('img/debut_light.png');
 	background-repeat:repeat;
-	
+
 	font-family: 'Exo-400', sans-serif;
 }
 
@@ -39,18 +39,18 @@ body #beta:hover {
 body #logo {
 	height:200px;
 	width:300px;
-	
+
 	position:absolute;
 	top:10px;
 	left:10px;
-	
+
 	background-image:url('img/logo.png');
 	background-repeat:no-repeat;
 }
 
 body #edit_aiml {
 	display:block;
-	position:absolute; 
+	position:absolute;
 	left:0px;
 	bottom:0px;
 	width:80px;
@@ -59,7 +59,7 @@ body #edit_aiml {
 	background-repeat:no-repeat;
 	background-size:40px 53px;
 	background-position:center 5px;
-	
+
 	padding:2px;
 	padding-top:60px;
 	text-align:center;
@@ -76,16 +76,16 @@ body #edit_aiml:hover {
 body h1 {
 	display:block;
 	width:900px;
-	
-	margin: 110px auto 0px auto; 
+
+	margin: 110px auto 0px auto;
 
 	padding:10px;
 
 	background-color:rgb(30,30,30);
 
 	color:rgb(255,176,96);
-	
-	
+
+
 	font-size:1.8em;
 }
 
@@ -102,7 +102,7 @@ body #content {
 	width:918px;
 	height:700px;
 	margin: 0px auto 0px auto;
-	
+
 		overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -186,7 +186,7 @@ body #output {
 
 	overflow-y: scroll;
     overflow-x: hidden;
-	
+
 	background-color:rgb(250,250,250);
 	border-style:solid;
 	border-width:2px;
@@ -254,7 +254,7 @@ body input {
 	border-style:solid;
 	border-width:2px;
 	border-color:rgb(30,30,30);
-	
+
 	font-family: 'Exo-400', sans-serif;
 	font-size:20px;
 	line-height:20px;
@@ -334,11 +334,60 @@ body #back_to_chat {
 	background-repeat:no-repeat;
 	background-size:40px 53px;
 	background-position:center 5px;
-	
+
 	padding:2px;
 	padding-top:60px;
 	text-align:center;
 	text-decoration:none;
 	font-size:0.8em;
 	color:rgb(30,30,30);
+}
+
+.onoffswitch {
+    position: absolute; width: 100px;
+		top: 50px;
+		right: 50px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 4px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "DEBUG";
+    padding-left: 10px;
+    background-color: #FFB060; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "DEBUG";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    border: 2px solid #999999; border-radius: 4px;
+    position: absolute; top: 0; bottom: 0; right: 66px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
 }

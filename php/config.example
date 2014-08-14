@@ -1,0 +1,4 @@
+<?php
+  //rename file to config.php and add path to prolog & python executables
+  $PROLOG_PATH = "prolog.exe";
+  $PYTHON_PATH = "python.exe";

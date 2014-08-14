@@ -7,27 +7,39 @@ from spellchecker import *
 
 class Aimlizer:
 	modules = []
+	steps = []
 
 	def addModule(self, module):
 		self.modules.append(module)
 
 	def aimlize(self, string):
+		self.steps = []
 		string  = string.encode('utf-8')
 		for(module) in self.modules:
 			string = module.process(string)
+			self.steps.append(module.getModuleName()+": "+string)
 		return string
 
+	def getSteps(self):
+		return self.steps
+
 class AimlizerModule:
+
+	def getModuleName(self):
+		return "AimlizerModule"
 
 	def process(self, string):
 		return string
 
 class NormalizerModule(AimlizerModule):
 
+	def getModuleName(self):
+		return "NormalizerModule"
+
 	def process(self, str):
 		exclude = set(string.punctuation)
 		str = ''.join(ch for ch in str if ch not in exclude)
-		
+
 		str = re.sub('/',' ',str)
 		str = re.sub('-',' ',str)
 		str = re.sub(' +',' ',str)
@@ -37,7 +49,7 @@ class NormalizerModule(AimlizerModule):
 
 class StopwordReductionModule(AimlizerModule):
 	list = []
-	
+
 	def __init__(self, stopwordlist):
 		global list
 		file = codecs.open(stopwordlist, 'r', 'utf-8')
@@ -45,10 +57,13 @@ class StopwordReductionModule(AimlizerModule):
 		self.list = [word.strip().upper() for word in words]
 		file.close()
 
+	def getModuleName(self):
+		return "StopwordReductionModule"
+
 	def process(self, str):
 		out = ""
 		for(word) in str.split(" "):
-			if(word.upper() not in self.list):
+			if(word.upper().decode('utf-8') not in self.list):
 				out += word+" "
 		out = out[:-1]
 		#print("Stopwords: " + out)
@@ -60,6 +75,10 @@ class SpellCheckerModule(AimlizerModule):
 	def __init__(self, word_list):
 		global sp
 		self.sp = SpellChecker(word_list)
+
+
+	def getModuleName(self):
+		return "SpellcheckerModule"
 
 	def process(self, str):
 		out = ""
@@ -74,14 +93,17 @@ class SpellCheckerModule(AimlizerModule):
 class ReplacerModule(AimlizerModule):
 	dict = []
 	file = ""
-	
+
 	def __init__(self, dictionary_file):
 		self.loadDictionaries(dictionary_file)
-		
+
+	def getModuleName(self):
+		return "ReplacerModule"
+
 	def loadDictionaries(self, dictionary_file):
 		global dict,file
 		self.file = dictionary_file
-		
+
 		with codecs.open(dictionary_file, 'r', 'utf-8') as file:
 			for line in file.readlines():
 				line = line.encode('utf-8').strip()
@@ -96,7 +118,7 @@ class ReplacerModule(AimlizerModule):
 					tmp = parts[1]
 					values = re.sub("\(([^)]+)\)", lambda x:x.group(0).replace(',',';'), tmp)
 					values = values.split(",")
-					
+
 				except IndexError:
 					continue
 				for value in values:
@@ -111,7 +133,7 @@ class ReplacerModule(AimlizerModule):
 							count = context[context.find("[")+1:context.find("]")]
 							tmp = {'word': str.strip().upper(), 'replacement': key.strip().upper(), 'context': neighbour.strip().upper(), 'distance': count}
 							self.dict.append(tmp)
-				
+
 
 
 	def process(self, str):
@@ -132,7 +154,7 @@ class ReplacerModule(AimlizerModule):
 				replacement = self.replacePhrase(phrase, str)
 				if(replacement != ''):
 					out = out.replace(" "+phrase+" ", " "+replacement+" ");
-				
+
 		#print("Replacer (" + self.file + "):" + out)
 		return out
 
@@ -157,15 +179,11 @@ class ReplacerModule(AimlizerModule):
 		return ''
 
 class FinalizerModule(AimlizerModule):
-	
+
+	def getModuleName(self):
+		return "FinalizerModule"
+
 	def process(self, str):
 		ulist = []
 		[ulist.append(x) for x in str.split() if x not in ulist]
 		return ' '.join(ulist)
-
-
-
-
-
-
-

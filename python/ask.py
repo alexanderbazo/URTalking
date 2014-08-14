@@ -72,11 +72,11 @@ def setupAiml():
 def setupAimlizer():
 	global aimlizer
 	aimlizer = Aimlizer()
-	
-	
+
+
 	#aimlizer.addModule(SpellCheckerModule(spellchecker_file))
 	aimlizer.addModule(NormalizerModule())
-	
+
 	dictonaries = [f for f in listdir(dict_folder) if isfile(join(dict_folder,f))]
 	for file in dictonaries:
 		if file.endswith(".dict"):
@@ -89,7 +89,10 @@ def setupAimlizer():
 def processRequest(str):
 	str = unicode(str, "utf-8")
 	str = aimlizer.aimlize(str)
-		
+
+	aimlizer_steps = aimlizer.getSteps()
+
+
 	last_query = restoreQuery()
 	permutations = list(itertools.permutations(str.split(), len(str.split())))
 	valid_queries = []
@@ -110,7 +113,8 @@ def processRequest(str):
 		tmp = aiml_kernel.respond(valid_queries[0], aiml_session)
 	else:
 		tmp = 'WARNING: No match found for input: '+str
-	print(tmp+" <span class='debug'>(aimlized query: "+str+")</span>")
+	print(tmp+" <span class='debug'>(aimlized query: "+str+" [")
+	print(', '.join(aimlizer_steps)+"])</span>")
 	saveSession()
 	if len(valid_queries) > 0:
 		saveQuery(valid_queries[0], aiml_session)
@@ -121,28 +125,28 @@ def test():
 	else:
 		file = codecs.open(testfile, 'r', 'utf-8')
 		questions = file.read().split('\n')
-	
+
 		for question in questions:
 			#print(question.strip().upper())
 			testRequest(question)
-			
+
 		file.close()
 
 def testRequest(str):
 	global testerrors
 	input = str
 	str = aimlizer.aimlize(str)
-	
+
 	last_query = restoreQuery()
 	permutations = list(itertools.permutations(str.split(), len(str.split())))
-	
+
 	valid_queries = []
-	
+
 	if len(str.split()) > int(max_permutations):
 		permutations = [str]
-	
+
 	ok = -1;
-		
+
 	for permutation in permutations:
 		query = ' '.join(permutation)
 		try:
@@ -156,7 +160,7 @@ def testRequest(str):
 			#print("aiml-error at: " + input)
 			#print(e)
 			continue
-	
+
 	if ok == -1:
 		try:
 			print("\""+input.encode('utf-8')+"\",\""+str+"\",\"FAILED\"")
@@ -164,7 +168,7 @@ def testRequest(str):
 			#print("print-error at: " + input)
 			#print(e)
 			pass
-			
+
 	saveSession()
 	if len(valid_queries) > 0:
 		saveQuery(valid_queries[0], aiml_session)
