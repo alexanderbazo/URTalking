@@ -123,7 +123,7 @@ def test():
 		questions = file.read().split('\n')
 	
 		for question in questions:
-			#print(question.strip().upper())
+			print(question.strip().upper())
 			testRequest(question)
 			
 		file.close()

@@ -12,13 +12,47 @@
 	</head>
 
 	<body onload="init()">
-		<div id="logo"></div>
-		<h1><span class="sub">#</span>Elise<span class="sub">: <span class="highlight">El</span>ektronisches <span class="highlight">I</span>nformations<span class="highlight">s</span>ystem für <span class="highlight">E</span>rstsemester</span></h1>
+
+	<a id ="logo" href="./index.php"></a>
+
+		<div id="navigation">
+		<ul>
+			<li><a href="./index.php">Startseite</a></li></li>
+			<li><a href="./documentation.php">Dokumentation</a></li>
+				<li><a href="./chatbots.php">Chatbot-Übersicht</a></li>
+			<li><a href="./literatur.php">Literatur</a></li>
+						</br>
+			<li><a href="./admin.php">Datenbasis bearbeiten</a></li>
+		</br>
+			<li><a href="./kontakt.php">Kontakt</a></li>
+			<li><a href="./impressum.php">Impressum</a></li>
+		</ul>
+		</div>
+
+		<h1><span class="sub">#</span>Elise<span class="sub">: 
+			<span class="highlight">E</span>lectronic
+			<span class="highlight">L</span>inguistic 
+			<span class="highlight">I</span>nformation
+			<span class="highlight">S</span>ystem for 
+			<span class="highlight">E</span>nrollees
+			</span>
+		</h1>
+			
+
 			<div id="output"></div>
-			<input id="input" type="text" name="spind" value="" placeholder="Stelle eine Frage und drücke die Eingabetaste" onkeydown="if (event.keyCode == 13) { processInput(this.value); return false; }">
+		<input id="input" type="text" name="spind" value="" 
+		placeholder="Stelle eine Frage und drücke die Eingabetaste" 
+		onkeydown="if (event.keyCode == 13) { processInput(this.value); return false; }">
+		
 		<footer>
-			Elise ist ein Chatbot, der Studieninteressierte und Studierende bei ihrem Studium an der Universität Regensburg unterstützt. Elise benutzt eine AIML-Dialogstruktur und Prolog-Fakten, um Fragen rund um das Studium der Fächer <a href="http://www.iw.uni-regensburg.de" class="web_link" target="_new">Informationswissenschaft</a> und <a href="http://www.mi.uni-regensburg.de" class="web_link" target="_new">Medieninformatik</a> an der <a href="http://www.uni-regensburg.de" class="web_link" target="_new">Universität Regensburg</a> zu beantworten.<br /><br />
-				Die Dokumentation zu diesem Projekt finden Sie <a href="./documentation.php">hier</a>. Bei Fragen zu diesem System können Sie sich an <br /><a href="mailto:alexander.bazo@ur.de">Alexander Bazo</a>, <a href="mailto:jessica.rak@stud.uni-regensburg.de">Jessica Rak</a>, <a href="mailto:michaela.schlesinger@stud.uni.regensburg.de">Michaela Schlesinger</a> und <a href="mailto:juergen.reischer@ur.de">Jürgen Reischer</a> wenden.
+			Elise ist ein Chatbot, der Studieninteressierte und Studierende bei ihrem Studium an der Universität Regensburg 
+			unterstützt. Elise benutzt eine AIML-Dialogstruktur und Prolog-Fakten, um Fragen rund um das Studium 
+			der Fächer <a href="http://www.iw.uni-regensburg.de" class="web_link" target="_new">Informationswissenschaft</a> 
+			und <a href="http://www.mi.uni-regensburg.de" class="web_link" target="_new">Medieninformatik</a> an 
+			der <a href="http://www.uni-regensburg.de" class="web_link" target="_new">Universität Regensburg</a> 
+			zu beantworten.<br /><br />
+			
+
 		</footer>
 
 		<a href="admin.php" id="edit_aiml">Datenbasis bearbeiten</a>

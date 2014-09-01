@@ -1,22 +1,22 @@
-BERUFALLGEMEIN:BERUF(eröffnen[5],bestehen[5],besteht[5],stehen[5],steht[5],qualifikation[5],qualifikationen[5],qualifiziert[5],studiengang[5],existieren[5],sehen[5],möglichkeit[5],möglichkeiten[5],mögliche[5],möglicher[5],offen[5],anstreben[5],gibt[5],geben[5],gibts[5]),BERUF,FACHKOMBI BERUF(bestehen[5],besteht[5],bieten[5],bietet[5],sinnvoll[5],sinnvollsten[5]),BERUF STUDIENGANG,BERUF BEISPIEL(bieten[5],bietet[5],bekommen[5],bekommt[5],bereiten[5],bereitet[5],qualifiziert[5]qualifikation[5],qualifikationen[5]),BERUF INHALT(benötigt[5],benötigen[5]),STUDIENGANG(anfangen[5]),BERUF FACH(fängt[5],fangen[5]),BERUF PROGRAMMIEREN(wahrnehmen[5]),BA(bekommt[5],bekommen[5]),BERUF
+BERUFALLGEMEIN:BERUF(eröffnen[5],bestehen[5],besteht[5],stehen[5],steht[5],qualifikation[5],qualifikationen[5],qualifiziert[5],studiengang[5],existieren[5],sehen[5],möglichkeit[5],möglichkeiten[5],mögliche[5],möglicher[5],offen[5],anstreben[5],gibt[5],geben[5],gibts[5]),FACHKOMBI BERUF(bestehen[5],besteht[5],bieten[5],bietet[5],sinnvoll[5],sinnvollsten[5]),BERUF STUDIENGANG,BERUF BEISPIEL(bieten[5],bietet[5],bekommen[5],bekommt[5],bereiten[5],bereitet[5],qualifiziert[5],qualifikation[5],qualifikationen[5]),BERUF INHALT(benötigt[5],benötigen[5]),STUDIENGANG(anfangen[5]),BERUF FACH(fängt[5],fangen[5]),BERUF PROGRAMMIEREN(wahrnehmen[5]),BA(bekommt[5],bekommen[5]),BERUF
 BERUFMW:BERUF MW,BERUFIW:,BERUF IW,BERUF STUDENT STUDIENGANG IW,ORT IW(suchen[5],sucht[5],gesucht[5]),IW Journalismus(geeignet[5])
 VORKENNTNISALLGEMEIN:VORKENNTNIS(mitbringen[5],besitzen[5],für[5],brauchen[5],empfehlen[5],empfohlen[5],nötig[5],notwendig[5],verlangt[5],verlangen[5],erforderlich[5],vorausgesetzt[5]),VORKENNTNIS STUDIENGANG(benötigt[5],benötigen[5],benötige[5])
 VORKENNTNISKURS:VORKENNTNIS KURS(gibt[5],geben[5],gibts[5],brauche[5],braucht[5],brauchen[5])
 AUFBAUKURS:KURS INHALT(bauen[5],baut[5])
-BEISPIELSTUNDENPLAN:FACH STUNDENPLAN(abhängig[5]),STUNDENLAN(gibt[5],geben[5],gibts[5]) ERSTIS
+BEISPIELSTUNDENPLAN:FACH STUNDENPLAN(abhängig[5]),STUNDENPLAN(gibt[5],geben[5],gibts[5]) ERSTIS
 PROGRAMMIERENALLGEMEIN:PROGRAMMIEREN(lernen[5],lernt[5],später[5],können[5],kann[5]),PROGRAMMIEREN
 MATHEALLGEMEIN:MATHE
 VORKENNTNISMATHEPROGRAMMIEREN:PROGRAMMIEREN MATHE(vorbereiten[5]),PROGRAMMIEREN NOTE(erhalten[5]),PROGRAMMIEREN VORKENNTNIS(brauche[5],braucht[5],brauchen[5],benötige[5],benötigen[5]),MATHE(können[5],kann[5]),PROGRAMMIEREN(lernen[5],lernt[5]),PROGRAMMIEREN BA(kann[5],können[5]),STUDIENGANG MATHE
 AUFWANDSTUDIUM:AUFWAND STUDIENGANG(bringt[5],bringen[5]),AUFWAND ÜBUNG
 VORKENNTNISSTUDIENGANG:VORKENNTNIS STUDIENGANG IW MI MW(mitbringen[5]),VORKENNTNIS MI STUDIENGANG
-MATHEMI:MATHE STUDIENGANG MI,Praktikum Ausland
+MATHEMI:MATHE STUDIENGANG MI
 PRAKTIKUMALLGEMEIN:PRAKTIKUM(vorhanden[5],gibt[5],geben[5],gibts[5],empfohlen[5]),STUDIENGANG PRAKTIKUM BEISPIEL(vorgesehen[5],sammeln[5],gibt[5],geben[5],gibts[5]),AUSLAND PRAKTIKUM(gibt[5],geben[5],gibts[5]),PRAKTIKUM SEMESTERFERIEN(notwendig[5],hilfreich[5]),PRAKTIKUM STUDIENGANG(erforderlich[5])
 PRAKTIKUMMI:PRAKTIKUM STUDIENGANG MI(sinnvolle[5],sinnvoll[5],sinnvollste[5],sinnvollsten[5])
 PRAKTIKUMMW:PRAKTIKUM MODUL MW
 AUSLANDALLGEMEIN:AUSLAND STUDIENGANG(gibt[5],geben[5],gibts[5]),AUSLAND(gibt[5],geben[5],gibts[5],studieren[5],studiert[5],möglich[5]),AUSLAND STUDIENPLAN,INFOS AUSLAND
 AUSLANDREGELSTUDIENZEIT:AUSLAND REGELSTUDIENZEIT SEMESTER(verlängern[5],verlängert[5])
 AUSLANDORT:ORT AUSLAND(hingehen[5],möglich[5])
-FACHKOMBIALLGEMEIN:FACHKOMBI(geeignete[5],möglich[5],mögliche[5],sinnvolle[5],sinnvoll[5],sinnvollste[5],sinnvollsten[5],vorteil[5],vorteile[5],vorteilhaft[5],sinn[5],optimal[5],empfehlenswert[5],wählen[5],wahl[5],belege[5],belegen[5],belegt[5],empfholen[5],schlau[5],schlausten[5],schlauesten[5]),FACH(kombinieren[5],kombiniert[5],kombinierbar[5]),FACHKOMBI(sinnvoll[5],sinnvolle[5],sinnvollste[5],sinnvollsten[5]) HF NF,ZUSATZANGEBOT(beschränkt[5],beschränken[5]),FACHKOMBI STUDIENGANG(sinnvollerweise[5],sinnvolle[5],sinnvoll[5],sinnvollste[5],sinnvollsten[5]),FACHKOMBI,FACHKOMBI FACH
+FACHKOMBIALLGEMEIN:FACHKOMBI(geeignete[5],möglich[5],mögliche[5],sinnvolle[5],sinnvoll[5],sinnvollste[5],sinnvollsten[5],vorteil[5],vorteile[5],vorteilhaft[5],sinn[5],optimal[5],empfehlenswert[5],wählen[5],wahl[5],belege[5],belegen[5],belegt[5],empfholen[5],schlau[5],schlausten[5],schlauesten[5]),FACH(kombinieren[5],kombiniert[5],kombinierbar[5]),FACHKOMBI(sinnvoll[5],sinnvolle[5],sinnvollste[5],sinnvollsten[5]),HF NF,ZUSATZANGEBOT(beschränkt[5],beschränken[5]),FACHKOMBI STUDIENGANG(sinnvollerweise[5],sinnvolle[5],sinnvoll[5],sinnvollste[5],sinnvollsten[5]),FACHKOMBI,FACHKOMBI FACH
 FACHKOMBISPEZIFISCH:BERUF FACHKOMBI IW ANBW(ausüben[5]),FACHKOMBI Sprachwissenschaft(möglich[5],mögliche[5],sinnvoll[5],sinnvolle[5],sinnvollste[5],sinnvollsten[5]),FACH HF(kombinieren[5],kombiniert[5])
 FACHKOMBIMI:FACHKOMBI MI (gibt[5],geben[5],gibts[5],sinnvolle[5],sinnvoll[5],sinnvollste[5],sinnvollsten[5],kombinieren[5],kombiniert[5],kombinierbar[5]),FACHKOMBI MI,MI FACHKOMBI(studiert[5],studieren[5]),NF(sinnvolle[5],sinnvoll[5],sinnvollste[5]) MI(gibt[5],geben[5],gibts[5])
 FACHKOMBIIW:2HF 2NF IW (ergänzen[5],ergänzt[5]),IW(kombinieren[5,kombiniert[5],kombinierbar[5]),IW(studieren[5],studiert[5],studierbar[5]) Sprache,IW MATHE(studieren[5],studiert[5],studierbar[5]),IW Germanistik(studieren[5],studiert[5],studierbar[5]),IW ANBW(studieren[5],studiert[5],studierbar[5])
@@ -25,8 +25,8 @@ FACHKOMBIIWMIMW:MI MW IW FACHKOMBI(wählen[5],wählt[5]),IW MI MW (sinnvolle[5],
 FACHKOMBIMIMW:MW MI 2HF(belegt[5],belegen[5])
 FACHKOMBIIWMW:FACHKOMBI MW IW
 FACHÜBERSCHNEIDUNG:STUDIENGANG (gibt[5],geben[5],gibts[5]) ÜBERSCHNEIDUNG
-FACHÜBERSCHNEIDUNGIWMIMW:KURS ÜBERSCHNEIDUNG INHALT IW MI MW FACKOMBI
-ÜBERSCHEIDUNGMIIW:MI(überschneiden[5]) IW PROJEKT,FACH(überschneiden[5]) IW MI
+FACHÜBERSCHNEIDUNGIWMIMW:KURS ÜBERSCHNEIDUNG INHALT IW MI MW FACHKOMBI
+ÜBERSCHNEIDUNGMIIW:MI(überschneiden[5]) IW PROJEKT,FACH(überschneiden[5]) IW MI
 REGELSTUDIENZEIT:DAUER REGELSTUDIENZEIT,REGELSTUDIENZEIT FACHKOMBI,STUDIENGANG(zeitaufwendig[5]),REGELSTUDIENZEIT(dauert[5],dauern[5]),REGELSTUDIENZEIT STUDIENGANG(vorgesehen[5]),SEMESTER(studieren[5],studiert[5]),ANZAHL SEMESTER(studieren[5],studiert[5]) FACH,DAUER STUDIENGANG(brauchen[5],braucht[5]),ANZAHL SEMESTER, REGELSTUDIENZEIT,DAUER STUDIENGANG
 REGELSTUDIENZEITIW:ANZAHL SEMESTER(brauchen[5],braucht[5]) FACH IW(bestehen[5],besteht[5]),DAUER IW
 FACHWECHSELALLGEMEIN:2HF NF WECHSEL,2HF NF(ändern[5]),HF STUDIENGANG(ändern[5])
@@ -39,12 +39,12 @@ FKNALLGEMEIN:FKN(ergänzt[5],ergänzen[5]) STUDIENGANG,FKN
 FKNPFLICHT:KURS FKN PFLICHTKURS(belegen[5],belegt[5])
 BERATUNGALLGEMEIN:PERSON ANSPRECHPARTNER(problemen[5]),PERSON ANSPRECHPARTNER,ANSPRECHPARTNER(zuständig[5]),ANSPRECHPARTNER STUDIENGANG,ORT ANSPRECHPARTNER STUDIENGANG,ORT ANSPRECHPARTNER
 SPRACHEN:Sprachen UR(gibt[5],geben[5],gibts[5])
-MENSA:ORT MENSAKARTE(bekomme[5],bekommen[5]),MESAKARTE(bekomme[5],bekommen[5])
+MENSA:ORT MENSAKARTE(bekomme[5],bekommen[5]),MENSAKARTE(bekomme[5],bekommen[5])
 SEMESTERKALENDER:SEMESTERFERIEN(dauern[5],anfangen[5],anfang[5],ende[5],enden[5],endet[5],anwesend[5]),WS(geht[5],ging[5],gehen[5]),TERMIN SEMESTERFERIEN,SEMESTER(dauern[5]),TERMIN SEMESTER(beginnt[5],beginnen[5],ende[5],enden[5],endet[5]),WS(fängt[5],fangt[5],anfangen[5])
 KLAUSURIW:ORT(findet[5],finden[5]) IW KLAUSUR
-RÄUMLICHKEITKURS:RAUM(findet[5],finden[5]) VORLESUNG zu spezifisch
+RÄUMLICHKEITKURS:RAUM(findet[5],finden[5]) VORLESUNG
 RÄUMLICHKEITBIB:(gibt[5],geben[5],gibts[5])BIB UR
-RÄUMLICHKEIT:MATHE RAUM WECHSEL zu spezifisch,TERMIN RAUM MATHE zu spezifisch,ORT INFOS(bekomme[5],bekommt[5],bekommen[5]) wohnungssuche zu spezifisch,STUDIENGANG(möglichkeit[5],möglichkeiten[5]) KURS Video aufzunehmen STUDIENGANG zu spezifisch,ORT RAUM Raumname zu spezifisch,RAUM VORLESUNG(bereitstellen[5]) zu spezifisch,ORT VORLESUNG
+RÄUMLICHKEIT:MATHE RAUM WECHSEL,TERMIN RAUM MATHE,ORT INFOS(bekomme[5],bekommt[5],bekommen[5]) wohnungssuche,STUDIENGANG(möglichkeit[5],möglichkeiten[5]) KURS Video aufzunehmen STUDIENGANG,ORT RAUM Raumname,RAUM VORLESUNG(bereitstellen[5]),ORT VORLESUNG
 BIBALLGEMEIN:BIB(nutze[5],nutzen[5],nutzt[5])
 BUCHKAUF:BUCH(kaufen[5])
 BUCHLEIHE:BIB(funktionieren[5],funktioniert[5])
@@ -70,7 +70,7 @@ NAVIGATIONALLGEMEIN:RAUM SEMESTERANFANG(finde[5],finden[5]),CAMPUSPLAN(finde[5],
 FACHSCHAFT:FACHSCHAFT(finde[5],finden[5])
 NAVIGATIONMENSA:ORT MENSA
 URLAUBSSEMESTERALLGEMEIN:URLAUBSSEMESTER,URLAUBSSEMESTER(nehmen[5]),URLAUBSSEMSTER KURS(besuchen[5],besucht[5])
-PRÜFUNGSTERMINALLGEMEINORT PRÜFUNGSTERMIN(nachschauen[5]),PRÜFUNGSTERMIN KURS kursname,PRÜFUNGSTERMIN EINSCHREIBUNG(einlesen[5]),PRÜFUNSTERMIN ORT KURS,ORT kursname KLAUSUR
+PRÜFUNGSTERMINALLGEMEIN:ORT PRÜFUNGSTERMIN(nachschauen[5]),PRÜFUNGSTERMIN KURS kursname,PRÜFUNGSTERMIN EINSCHREIBUNG(einlesen[5]),PRÜFUNSTERMIN ORT KURS,ORT kursname KLAUSUR
 ALTKLAUSURALLGEMEIN:ALTKLAUSUR ÜBUNG(nutzen[5],nutzt[5]),ORT(finde[5],finden[5],findet[5]) ALTKLAUSUR,KLAUSUR(lernen[5],lerne[5],lernt[5]),KLAUSUR MODUL(optimal[5],vorbereiten[5]),Schwer KLAUSUR fachname
 NOTENVERBESSERUNGKURS:KURS(wiederholen[5]),KLAUSUR NOTENVERBESSERUNG(wiederholen[5])
 LERNAUFWAND:Auswendig(lernen[5],lernt[5],lerne[5])
@@ -101,13 +101,13 @@ EINSCHREIBUNGNC:VORKENNTNIS(bestehen[5]) EINSCHREIBUNG
 BEWERBUNG:TERMIN BEWERBUNG
 RÜCKMELDUNGSEMESTER:SEMESTER(meldet[5],melden[5])
 STUDIUMANFANGTERMIN:TERMIN(anfangen[5],anfang[5],studieren[5])
-STUDIENGANGALLGEMEIN:STUDIENGANG (entsprechen[5],entspricht[5]) VORKENNTNIS,Schwer zu spezifisch,STUDIENGANG schwer zu spezifisch,Informieren zu spezifisch
+STUDIENGANGALLGEMEIN:STUDIENGANG (entsprechen[5],entspricht[5])
 STUDIENGANGINHALT:FACH INHALT(vermittelt[5],beigebracht[5]),THEMA(abgedeckt[5],abdecken[5]),THEMA STUDIENGANG,INHALT STUDIENGANG,INHALT(abgedeckt[5],abdecken[5]) STUDIENGANG(vertreten[5]),ERSTIS(beschäftigt[5],beschäftigen[5])
 STUDIENGANGAUFBAU:STUDIENGANG(aufgebaut[5],aufbauen[5]),KURS STUDIENGANG(besuchen[5],besucht[5])
 IWALLGEMEIN:STUDENT IW(studieren[5]),THEMA KURS STUDIENGANG(beschäftigen[5],beschäftigt[5]),IW(geht[5],gehen[5],gehts[5]),STUDIENGANG IW,IW CIP MEDIEN(beschränkt[5],beschränken[5]),IW,STUDIENGANG IW(vorstellen[5])
 BSC:TERMIN(kombination[5],kombinieren[5],kombiniert[5]) IW MI BSC(angeboten[5],anbieten[5]) THEORIE
 IWINHALT:IW INFOS(strukturiert[5],strukturieren[5],priorisieren[5],priorisiert[5])
-INHALT IWSTUDIENGANG(beinhaltet[5],beinhalten[5]) IW
+INHALTIW:STUDIENGANG(beinhaltet[5],beinhalten[5]) IW
 MIINHALT:INHALT(beschäftigen[5],beschäftigt[5]) MI
 FACHINHALT:INHALT FACH fachname,INHALT
 STUDIENPLALLGEMEIN:KURS(optimal[5]) Einteilung SEMESTER,KLAUSUR KURS(abgeschlossen[5],abschließen[5]),KURS(belegen[5],belegt[5]) TERMIN SEMESTER(nehmen[5]),FACH(empfohlen[5],empfehlen[5],empfiehlt[5],belegen[5]),STUDIENPLAN(gibt[5],geben[5],gibts[5]) FACH(belege[5],belegen[5],sinvoll[5],sinvollsten[5],sinnvoller[5]),Reihenfolge KURS(besuchen[5],besucht[5]),TERMIN(geben[5],gibt[5],gibts[5],belegen[5]) BEISPIEL,SEMESTER MATHE kursname,STUDIENGANG(stellt[5],stellen[5]) KURS,KURS STUDIENGANG(besuchen[5],besucht[5]),FACH(empfehlen[5],empfohlen[5],empfiehlt[5]) TERMIN SEMESTER(nehmen[5]),KURS SEMESTER(empfehlen[5],empfohlen[5],empfiehlt[5]),KURS SEMESTER(besuchen[5],besucht[5]) VORKENNTNISS
@@ -121,35 +121,35 @@ PRÜFUNGSORDNUNGMW:MW 2HF(studieren[5],studiere[5],studiert[5]) LP MODUL(sammeln
 MODULINHALT:MODUL(geht[5],gehen[5],gehts[5],lerne[5],lernen[5],lernt[5]) modulname
 MODULWIEDERHOLUNG:MODUL TERMIN WS SS(wiederholen[5],wiederholt[5],wiederholbar[5]),MODUL(wiederholen[5],wiederholt[5],wiederholbar[5]) VORKENNTNIS ÜBUNG KLAUSUR(schreiben[5],schreibt[5],übernehmen[5],übernehmbar[5],übernimmt[5])
 MODULSTUDIENGANG:MODUL(besteht[5],bestehen[5]) STUDIENGANG,STUNDENPLAN MODUL STUDIENGANG studiengangname
-SCHWIERIGKEITSGRADKURS:.KURS(schwierig[5],schwer[5],schwierigsten[5],schwierigster[5])
-ABHÄNGIGEKURSE:.MATHE MI(absolvieren[5],absolviert[5],teilnehmen[5],teilnahme[5])
-KURSÜBERSCHNEIDUNGEN:.KURS(überschneiden[5],überschneidende[5],überschneidungen[5],geben[5],gibt[5],gibts[5])
-PUNKTEPROSEMESTER:.KLAUSUR SEMESTER(bestehen[5],besteht[5])
-MITARBEITERALLE:.mitarbeitername,ANZAHL DOZENT FAKULTÄT SLK,STUDENT STUDIENGANG DOZENZ zu spezifisch,DOZENT zu spezifisch,DOZENT KURS zu spezifisch,Durchschnittsalter DOZENT zu spezifisch
-DOZENTVORLESUNG:.DOZENT(halten[5],hält[5]) KURS
-DOZENTANZAHL:.ANZAHL DOZENT(gibt[5],geben[5],gibts[5]),ANZAHL DOZENT
-UNTERSCHIEDMITARBEITER:.Unterschied DOZENT PROF
-SPRECHSTUNDENZEIT:.TERMIN SPRECHSTUNDE PROF DOZENT
-SCHWERPUNKTESTUDIUM:.ORT(liegt[5],liegen[5]) THEMA STUDIENGANG,THEMA FACH(liegt[5],liegen[5],gelegt[5]) SKILLS(entwickeln[5],entwickelt[5]).ORT(liegt[5],liegen[5]) THEMA STUDIENGANG studiengangname
-SCHWERPUNKTEMI:.THEMA(liegt[5],liegen[5]) MI MEDIEN PROGRAMMIEREN,THEMA MI PROGRAMMIEREN MEDIEN,THEMA MEDIEN MI
-UNTERSCHEIDUNGSTUDIENGANG:.UNTERSCHIED(liegen[5],liegt[5]) STUDIENGANG
-UNTERSCHEIDUNGIWMI:.UNTERSCHIED MI IW
-UNTERSCHEIDUNGIWMW:.UNTERSCHIED IW MW
-UNTERSCHEIDUNGMIINFORMATIK:.MI(genzt[5],grenzen[5]) PROGRAMMIEREN
-UNTERSCHEIDUNGMIMW:.UNTERSCHIED MI MW
-UNTERSCHIEDINHALTIWMI:.IW(behandeln[5],behandelt[5]) MI THEMA,THEMA(behandeln[5],behandelt[5]) MI IW
-PROGRAMMIERSPRACHENIWMI:.Programmieren(lernt[5],lernen[5]) MI IW
-LPERSETZENMWIW:.2HF NF MODUL 1HF(vorgeben[5],vorgegeben[5]) LP(ersetzen[5],ersetzt[5],ersetzbar[5],belegen[5],belegt[5],kombination[5]) MW IW
-UNTERSCHEIDUNGMODULMIMW:.MODUL FACH UNTERSCHIED MI MW
-UNTERSCHIEDINFOWISSEN:.UNTERSCHIED INFOS Wissen
-INHALTIW:.THEMA IW
-IWKURSEPRAKTISCH:.IW(stellt[5],stellen[5],stellte[5]) WEBSEITE THEORIE KURS(steht[5],stehen[5])
-MIALLGEMEIN:.MI(bedeutet[5],bedeuten[5]),Eigenschaften MI,MI
-MATHEMI:.MATHE(brauchen[5],braucht[5]) MI
-PROGRAMMIERNMI:.PROGRAMMIEREN MI,MI(kommt[5],kommen[5]) PROGRAMMIEREN
-PROGRAMMIERENIW:.PROGRAMMIEREN IW(vorhanden[5]),IW PROGRAMMIEREN,PROGRAMMIEREN,IW(hat[5],haben[5]) PROGRAMMIEREN(zutun[5])
-STUDIENGANGPROGRAMMIEREN:.STUDIENGANG PROGRAMMIEREN,STUDIENGANG Ähnlichkeit PROGRAMMIEREN,PROGRAMMIEREN
-GRUNDLAGENUNDORIENTIERUNGSPRÜFUNG:.MODUL TERMIN(abgeschlossen[5],abschließen[5]),KURS MODUL ERSTIS(wählen[5],wählt[5],belegen[5],belegt[5]),KURS ERSTIS(belegen[5],belegt[5],besucht[5],besuchen[5]),KLAUSUR ENDE ERSTIS(erbracht[5],erbringen[5]),KURS SEMESTER(bestanden[5],bestehen[5]),MODUL ERSTIS(belegen[5],belegt[5]),MODUL(sieht[5],sehen[5]) ERSTIS(belegen[5],belegt[5]),KURS ANFANG(wählen[5],wählt[5])
+SCHWIERIGKEITSGRADKURS:KURS(schwierig[5],schwer[5],schwierigsten[5],schwierigster[5])
+ABHÄNGIGEKURSE:MATHE MI(absolvieren[5],absolviert[5],teilnehmen[5],teilnahme[5])
+KURSÜBERSCHNEIDUNGEN:KURS(überschneiden[5],überschneidende[5],überschneidungen[5],geben[5],gibt[5],gibts[5])
+PUNKTEPROSEMESTER:KLAUSUR SEMESTER(bestehen[5],besteht[5])
+MITARBEITERALLE:mitarbeitername,ANZAHL DOZENT FAKULTÄT SLK,STUDENT STUDIENGANG DOZENZ,DOZENT,DOZENT KURS,Durchschnittsalter DOZENT
+DOZENTVORLESUNG:DOZENT(halten[5],hält[5]) KURS
+DOZENTANZAHL:ANZAHL DOZENT(gibt[5],geben[5],gibts[5]),ANZAHL DOZENT
+UNTERSCHIEDMITARBEITER:Unterschied DOZENT PROF
+SPRECHSTUNDENZEIT:TERMIN SPRECHSTUNDE PROF DOZENT
+SCHWERPUNKTESTUDIUM:ORT(liegt[5],liegen[5]) THEMA STUDIENGANG,THEMA FACH(liegt[5],liegen[5],gelegt[5]) SKILLS(entwickeln[5],entwickelt[5]) ORT(liegt[5],liegen[5]) THEMA STUDIENGANG studiengangname
+SCHWERPUNKTEMI:THEMA(liegt[5],liegen[5]) MI MEDIEN PROGRAMMIEREN,THEMA MI PROGRAMMIEREN MEDIEN,THEMA MEDIEN MI
+UNTERSCHEIDUNGSTUDIENGANG:UNTERSCHIED(liegen[5],liegt[5]) STUDIENGANG
+UNTERSCHEIDUNGIWMI:UNTERSCHIED MI IW
+UNTERSCHEIDUNGIWMW:UNTERSCHIED IW MW
+UNTERSCHEIDUNGMIINFORMATIK:MI(genzt[5],grenzen[5]) PROGRAMMIEREN
+UNTERSCHEIDUNGMIMW:UNTERSCHIED MI MW
+UNTERSCHIEDINHALTIWMI:IW(behandeln[5],behandelt[5]) MI THEMA,THEMA(behandeln[5],behandelt[5]) MI IW
+PROGRAMMIERSPRACHENIWMI:Programmieren(lernt[5],lernen[5]) MI IW
+LPERSETZENMWIW:2HF NF MODUL 1HF(vorgeben[5],vorgegeben[5]) LP(ersetzen[5],ersetzt[5],ersetzbar[5],belegen[5],belegt[5],kombination[5]) MW IW
+UNTERSCHEIDUNGMODULMIMW:MODUL FACH UNTERSCHIED MI MW
+UNTERSCHIEDINFOWISSEN:UNTERSCHIED INFOS Wissen
+INHALTIW:THEMA IW
+IWKURSEPRAKTISCH:IW(stellt[5],stellen[5],stellte[5]) WEBSEITE THEORIE KURS(steht[5],stehen[5])
+MIALLGEMEIN:MI(bedeutet[5],bedeuten[5]),Eigenschaften MI,MI
+MATHEMI:MATHE(brauchen[5],braucht[5]) MI
+PROGRAMMIERENMI:PROGRAMMIEREN MI,MI(kommt[5],kommen[5]) PROGRAMMIEREN
+PROGRAMMIERENIW:PROGRAMMIEREN IW(vorhanden[5]),IW PROGRAMMIEREN,PROGRAMMIEREN,IW(hat[5],haben[5]) PROGRAMMIEREN(zutun[5])
+STUDIENGANGPROGRAMMIEREN:STUDIENGANG PROGRAMMIEREN,STUDIENGANG Ähnlichkeit PROGRAMMIEREN,PROGRAMMIEREN
+GRUNDLAGENUNDORIENTIERUNGSPRÜFUNG:MODUL TERMIN(abgeschlossen[5],abschließen[5]),KURS MODUL ERSTIS(wählen[5],wählt[5],belegen[5],belegt[5]),KURS ERSTIS(belegen[5],belegt[5],besucht[5],besuchen[5]),KLAUSUR ENDE ERSTIS(erbracht[5],erbringen[5]),KURS SEMESTER(bestanden[5],bestehen[5]),MODUL ERSTIS(belegen[5],belegt[5]),MODUL(sieht[5],sehen[5]) ERSTIS(belegen[5],belegt[5]),KURS ANFANG(wählen[5],wählt[5])
 GRUNDLAGENUNDORIENTIERUNGSPRÜFUNGMW:KURS(gibt[5],gibts[5],geben[5]) FACH MW ENDE SEMESTER(absolviert[5],absolvieren[5])
 PRAXISORIENTIERTHEITSTUDIUM:PROJEKT STUDIENGANG,Verhältnis THEORIE PROJEKT,STUDIENGANG THEORIE PROJEKT
 STUDIENGANGPROGRAMMIERENUNI:PROGRAMMIEREN UR

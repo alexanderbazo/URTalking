@@ -67,7 +67,7 @@ class SpellCheckerModule(AimlizerModule):
 			correction = self.sp.correct(word)
 			out += correction+" "
 		out = out[:-1]
-		#print("Spellchecker: " + out)
+		print("Spellchecker: " + out)
 		return out
 
 

@@ -36,16 +36,53 @@ body #beta:hover {
 	cursor:pointer;
 }
 
+
+body #navigation {
+
+	height:200px;
+	width:239px;
+	color:rgb(255,176,96);
+	font-size:1.0em;
+	margin: 150px auto auto 10px;
+
+	position:absolute;
+	top:10px;
+	left:5px;
+	
+
+
+}
+body #navigation ul{
+
+
+color:rgb(255,176,96);
+	font-size:1.0em;
+
+}
+
+body #navigation ul ul{
+
+color:rgb(255,176,96);
+	font-size:0.8em;
+margin-left: -25px;
+
+
+
+}
+
 body #logo {
 	height:200px;
 	width:300px;
 	
 	position:absolute;
-	top:10px;
-	left:10px;
+	top:20px;
+	left:20px;
 	
 	background-image:url('img/logo.png');
 	background-repeat:no-repeat;
+	background-size: 75%;
+
+
 }
 
 body #edit_aiml {
@@ -77,7 +114,7 @@ body h1 {
 	display:block;
 	width:900px;
 	
-	margin: 110px auto 0px auto; 
+	margin: 110px auto 0px 250px; 
 
 	padding:10px;
 
@@ -85,8 +122,8 @@ body h1 {
 
 	color:rgb(255,176,96);
 	
-	
-	font-size:1.8em;
+	text-align: center;
+	font-size:1.6em;
 }
 
 body h1 .highlight {
@@ -99,11 +136,11 @@ body h1 .sub {
 
 body #content {
 	display:block;
-	width:918px;
+	width:910px;
 	height:700px;
-	margin: 0px auto 0px auto;
-	
-		overflow-y: scroll;
+	margin: 0px auto 0px 240px;
+	padding-left: 20px;
+	overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -114,12 +151,11 @@ body #content a {
 
 
 body #content ul {
+	
 	list-style-type: none;
+	padding-right: 100px;
 }
 
-body #content ul li {
-	line-height:40px;
-}
 
 body #content ul .pdf {
 	background:url('img/pdf.png');
@@ -127,6 +163,7 @@ body #content ul .pdf {
    	padding-left: 40px;
 	background-size:32px 32px;
 	background-position:0px 4px;
+	line-height:40px;
 }
 
 body #content ul .zip {
@@ -135,6 +172,7 @@ body #content ul .zip {
    	padding-left: 40px;
 	background-size:32px 32px;
 	background-position:0px 4px;
+	line-height:40px;
 }
 
 body #content ul .txt {
@@ -143,6 +181,7 @@ body #content ul .txt {
    	padding-left: 40px;
 	background-size:32px 32px;
 	background-position:0px 4px;
+	line-height:40px;
 }
 
 body #content ul .html {
@@ -151,6 +190,9 @@ body #content ul .html {
    	padding-left: 40px;
 	background-size:32px 32px;
 	background-position:0px 4px;
+	line-height:40px;
+
+}
 }
 
 body #content ul .py {
@@ -159,8 +201,29 @@ body #content ul .py {
    	padding-left: 40px;
 	background-size:32px 32px;
 	background-position:0px 4px;
+	line-height:40px;
+
 }
 
+body #content ul .link {
+	background-repeat:no-repeat;
+   	line-height:20px;
+   	margin-left: 30px;
+   	text-indent: -30px;
+	
+}
+
+
+
+body #content ul .text {
+	background-repeat:no-repeat;
+   	line-height:20px;
+   	margin-left: 30px;
+   	text-indent: -30px;
+	
+}
+	
+}
 body #content::-webkit-scrollbar {
     width: 10px;
 }
@@ -182,7 +245,7 @@ body #output {
 	display:block;
 	width:918px;
 	height:500px;
-	margin: 0px auto 0px auto;
+	margin: 0px auto 0px 250px;
 
 	overflow-y: scroll;
     overflow-x: hidden;
@@ -247,7 +310,7 @@ body input {
 	display:block;
 	width:896px;
 	height:50px;
-	margin: 5px auto 0px auto;
+	margin: 5px auto 0px 250px;
 	padding: 10px;
 
 	background-color:rgb(250,250,250);
@@ -313,7 +376,7 @@ body footer {
 	width:900px;
 	bottom:50px;
 
-	margin: 50px auto 0px auto;
+	margin: 30px auto 0px 255px;
 
 	font-family: 'Exo-300', sans-serif;
 	text-align:center;

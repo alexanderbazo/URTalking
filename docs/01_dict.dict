@@ -1,4 +1,4 @@
-//Ersetzung mit Bezug auf den Kontext: WORT(NACHBAR[ENTFERNUNG],NACHBAR[ENTFERNUNG],..) Bsp.: punkte(bekommt[2],bekomme[2])
+﻿//Ersetzung mit Bezug auf den Kontext: WORT(NACHBAR[ENTFERNUNG],NACHBAR[ENTFERNUNG],..) Bsp.: punkte(bekommt[2],bekomme[2])
 1HF:erstes hauptfach,erstes hf, 1.hf,1. hf,1.hauptfach,1. hauptfach,1tes hf,1tes hauptfach,1 hf,1hf,1 hauptfach,1hauptfach,hauptfach
 1NF:erstes nebenfach,erstes nf, 1.nf,1. nf,1.nebenfach,1. nebenfach,1tes nf,1tes nebenfach,1 nf,1nf,1 nebenfach,1nebenfach
 2HF:zweites hauptfach,zweites hf,zweitem hauptfach,zweitem hf,zweiten hauptfach,zweiten hf,2.hf,2. hf,2.hauptfach,2 hauptfach,2tes hf,2tes hauptfach,2ten hf,2tem hf,2ten hauptfach,2tem hauptfach,2 hf,2hf,2 hauptfach,2hauptfach
