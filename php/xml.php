@@ -1,5 +1,4 @@
 <?php
-
 function getAimlXML() {
 	$xml = file_get_contents('../python/aiml/uni_regensburg.aiml');
 	return $xml;
@@ -7,9 +6,9 @@ function getAimlXML() {
 
 function updateAiml($json) {
 	$passwordhash = $_POST['passwordhash'];
-	if($passwordhash != "d60be3131110017d89bb3b089028a226") {
-		return -1;
-	}
+	//if($passwordhash != "d60be3131110017d89bb3b089028a226") {
+		//return -1;
+	//}
 
 	$old_file_path = '../python/aiml/uni_regensburg.aiml';
 	$backup_file_path = '../python/aiml/bak_'.time().'_uni_regensburg.aiml';

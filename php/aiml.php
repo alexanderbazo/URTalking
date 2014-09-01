@@ -1,14 +1,15 @@
 <?php
-	
+
 	function queryAIML($query, $file) {
 		$result = ask_aiml($query, $file);
+		$result = str_replace("NEWLINE", "<br />", $result);
 		return processAimlResult($result);
 	}
-	
+
 	function ask_aiml($request, $aiml_file)
 	{
 		logDialog(time(), session_id(), "human", $request);
-		$result = shell_exec('python.exe ../python/ask.py -q "'.$request.'" -a "../python/aiml/'.$aiml_file.'" -s '.session_id().' -d "../python/dict/" -l "../python/stopwords/german.stop"  2>&1');
+		$result = shell_exec($PYTHON_PATH.' ../python/ask.py -q "'.$request.'" -a "../python/aiml/'.$aiml_file.'" -s '.session_id().' -d "../python/dict/" -l "../python/stopwords/german.stop"  2>&1');
 		$pos = strpos($result, 'WARNING');
 		if($pos === false) {
 			logDialog(time(), session_id(), "bot", $result);
@@ -18,12 +19,12 @@
 			logDialog(time(), session_id(), "bot", "Daran hat der Autor meiner AIML-Datei nicht gedacht. Tut mir leid.");
 			return "Daran hat der Autor meiner AIML-Datei nicht gedacht. Tut mir leid. <span class='debug'>".$tmp[1];
 		}
-		
+
 	}
-	
+
 	function processAimlResult($result) {
 		$prologrequest = strpos($result, 'prolog');
-		
+
 		if($prologrequest === false) {
 			return $result;
 		} else {
@@ -41,12 +42,12 @@
 			}
 		}
 	}
-	
+
 	function logDialog($timestamp, $session, $speaker, $msg) {
 		$file = fopen('../logs/'.$session.'.log', "a");
 		fwrite($file, $timestamp.",".$session.",".$speaker.",".$msg."\n");
 		fclose($file);
 	}
 
-	
+
 ?>
