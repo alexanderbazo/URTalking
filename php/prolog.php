@@ -2,6 +2,9 @@
 
 	function ask_prolog($request)
 	{
+
+	  $PROLOG_PATH = "prolog.exe";
+
 		$pos = strpos($request, 'prolog');
 
 

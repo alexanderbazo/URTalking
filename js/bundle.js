@@ -190,16 +190,10 @@ function writeToOutput(msg, source)
 	div.innerHTML = div.innerHTML + '</span>';
 	div.scrollTop = div.scrollHeight;
 	$("#output .line a").attr("target","_blank");
-	if(debug == true) {
+	if(debug == false) {
 		$("#output .debug").hide();
 	}
 	setupCourseList();
 	if(source == "elise" && speak == true) {
 	}
-<<<<<<< HEAD
 }
-	
-=======
-
-}
->>>>>>> 8990bb41d2526fb4ff43a2069afac0007b418dec

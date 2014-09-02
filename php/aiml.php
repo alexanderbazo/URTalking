@@ -8,6 +8,7 @@
 
 	function ask_aiml($request, $aiml_file)
 	{
+ 		$PYTHON_PATH = "python.exe";
 		logDialog(time(), session_id(), "human", $request);
 		$result = shell_exec($PYTHON_PATH.' ../python/ask.py -q "'.$request.'" -a "../python/aiml/'.$aiml_file.'" -s '.session_id().' -d "../python/dict/" -l "../python/stopwords/german.stop"  2>&1');
 		$pos = strpos($result, 'WARNING');
