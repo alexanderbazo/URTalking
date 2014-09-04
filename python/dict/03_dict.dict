@@ -1,6 +1,6 @@
 BERUFALLGEMEIN:BERUF(eröffnen[5],bestehen[5],besteht[5],stehen[5],steht[5],qualifikation[5],qualifikationen[5],qualifiziert[5],studiengang[5],existieren[5],sehen[5],möglichkeit[5],möglichkeiten[5],mögliche[5],möglicher[5],offen[5],anstreben[5],gibt[5],geben[5],gibts[5]),FACHKOMBI BERUF(bestehen[5],besteht[5],bieten[5],bietet[5],sinnvoll[5],sinnvollsten[5]),BERUF STUDIENGANG,BERUF BEISPIEL(bieten[5],bietet[5],bekommen[5],bekommt[5],bereiten[5],bereitet[5],qualifiziert[5],qualifikation[5],qualifikationen[5]),BERUF INHALT(benötigt[5],benötigen[5]),STUDIENGANG(anfangen[5]),BERUF FACH(fängt[5],fangen[5]),BERUF PROGRAMMIEREN(wahrnehmen[5]),BA(bekommt[5],bekommen[5]),BERUF
 BERUFMW:BERUF MW,BERUFIW:,BERUF IW,BERUF STUDENT STUDIENGANG IW,ORT IW(suchen[5],sucht[5],gesucht[5]),IW Journalismus(geeignet[5])
-VORKENNTNISALLGEMEIN:VORKENNTNIS(mitbringen[5],besitzen[5],für[5],brauchen[5],empfehlen[5],empfohlen[5],nötig[5],notwendig[5],verlangt[5],verlangen[5],erforderlich[5],vorausgesetzt[5]),VORKENNTNIS STUDIENGANG(benötigt[5],benötigen[5],benötige[5])
+VORKENNTNISALLGEMEIN:VORKENNTNIS(mitbringen[5],besitzen[5],für[5],brauchen[5],brauche[5],empfehlen[5],empfohlen[5],nötig[5],notwendig[5],verlangt[5],verlangen[5],erforderlich[5],vorausgesetzt[5]),VORKENNTNIS STUDIENGANG(benötigt[5],benötigen[5],benötige[5])
 VORKENNTNISKURS:VORKENNTNIS KURS(gibt[5],geben[5],gibts[5],brauche[5],braucht[5],brauchen[5])
 AUFBAUKURS:KURS INHALT(bauen[5],baut[5])
 BEISPIELSTUNDENPLAN:FACH STUNDENPLAN(abhängig[5]),STUNDENPLAN(gibt[5],geben[5],gibts[5]) ERSTIS
@@ -11,7 +11,7 @@ AUFWANDSTUDIUM:AUFWAND STUDIENGANG(bringt[5],bringen[5]),AUFWAND ÜBUNG
 VORKENNTNISSTUDIENGANG:VORKENNTNIS STUDIENGANG IW MI MW(mitbringen[5]),VORKENNTNIS MI STUDIENGANG
 MATHEMI:MATHE STUDIENGANG MI
 PRAKTIKUMALLGEMEIN:PRAKTIKUM(vorhanden[5],gibt[5],geben[5],gibts[5],empfohlen[5]),STUDIENGANG PRAKTIKUM BEISPIEL(vorgesehen[5],sammeln[5],gibt[5],geben[5],gibts[5]),AUSLAND PRAKTIKUM(gibt[5],geben[5],gibts[5]),PRAKTIKUM SEMESTERFERIEN(notwendig[5],hilfreich[5]),PRAKTIKUM STUDIENGANG(erforderlich[5])
-PRAKTIKUMMI:PRAKTIKUM STUDIENGANG MI(sinnvolle[5],sinnvoll[5],sinnvollste[5],sinnvollsten[5])
+PRAKTIKUMMI:PRAKTIKUM STUDIENGANG MI(sinnvollste[5],sinnvolle[5],sinnvoll[5],sinnvollsten[5])
 PRAKTIKUMMW:PRAKTIKUM MODUL MW
 AUSLANDALLGEMEIN:AUSLAND STUDIENGANG(gibt[5],geben[5],gibts[5]),AUSLAND(gibt[5],geben[5],gibts[5],studieren[5],studiert[5],möglich[5]),AUSLAND STUDIENPLAN,INFOS AUSLAND
 AUSLANDREGELSTUDIENZEIT:AUSLAND REGELSTUDIENZEIT SEMESTER(verlängern[5],verlängert[5])
