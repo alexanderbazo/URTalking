@@ -14,6 +14,12 @@
 		<ul>
 			<li><a href="./index.php">Startseite</a></li></li>
 			<li><a href="./documentation.php">Dokumentation</a></li>
+
+		<ul>
+			<li><a href="./documentation.php">Seminararbeiten</a></li>
+			<li><a href="./documentation_software.php">Software</a></li>
+		</ul>
+		<br>
 				<li><a href="./chatbots.php">Chatbot-Übersicht</a></li>
 			<li><a href="./literatur.php">Literatur</a></li>
 		</br>
@@ -28,41 +34,27 @@
 
 <div id="content">
 <h2>Seminararbeiten</h2>
+<div>
+Das Projekt "URTalking" ist ein Forschungsprojekt des Lehrstuhls für Informationswissenschaft an der
+ Universität Regensburg. Im Rahmen des Seminars "Methoden der maschinellen Sprachverarbeitung" entwickeln
+  die Masterstudierenden unter Anleitung von PD Dr. Reischer den Prototypen
+  kontinuierlich weiter. 
+  <br><br>
+  Die Projektberichte der vergangenen Semester dokumentieren die Weiterentwicklung des Chatbots:
+</div>
+
 <h3>Sommersemester 2014</h3>
 <ul>
-<a href=""><li class="pdf">Projektbericht (Schubart)</li></a>
+<a href="" target="_blank"><li class="link">Projektbericht (Schubart)</li></a>
 </ul>
 
 <h3>Wintersemester 2013/2014</h3>
 <ul>
-<a href="./docs/DokumentationURTalking_Endversion.pdf"><li class="pdf">Seminararbeit mit technischer Dokumentation (Bazo, Rak, Schlesinger)</li></a>
-<a href="./docs/Konversationsstrukturen_Endversion.pdf"><li class="pdf">Analytische Ableitung von Konversationsstrukturen aus Chatbot-Mensch-Interaktionen (Pflamminger, Rank, Spies)</li></a>
-<a href="./docs/AIML_Seminararbeit_Endversion.pdf"><li class="pdf">Möglichkeiten und Grenzen von AIML (Schneider)</li></a>
+<a href="./docs/DokumentationURTalking_Endversion.pdf" target="_blank"><li class="link">Seminararbeit mit technischer Dokumentation (Bazo, Rak, Schlesinger)</li></a>
+<a href="./docs/Konversationsstrukturen_Endversion.pdf" target="_blank"><li class="link">Analytische Ableitung von Konversationsstrukturen aus Chatbot-Mensch-Interaktionen (Pflamminger, Rank, Spies)</li></a>
+<a href="./docs/AIML_Seminararbeit_Endversion.pdf" target="_blank"><li class="link">Möglichkeiten und Grenzen von AIML (Schneider)</li></a>
 </ul>
 
-<h2>Software</h2>
-<ul>
-<a href="./docs/Website.zip"><li class="html">Finaler Stand dieser Website (HTMl,JS,PHP - ZIP-Archiv)</li></a>
-<a href="./docs/Aimlizer.zip"><li class="py">Finaler Stand der Python-Brücke (ZIP-Archiv)</li></a>
-<a href="./docs/Prolog-Code.zip"><li class="zip">Verwendeter Prolog-Code (ZIP-Archiv)</li></a>
-</ul>
-<h2>Datenbasis</h2>
-<ul>
-<a href="./docs/Fragebogen.pdf"><li class="pdf">Fragebogen zur Erhebung möglicher Fragestellungen unter Erstsemestern</li></a>
-<a href="./docs/Transkription_Datenerhebung.pdf"><li class="pdf">Transkription aller erhobenen Fragen (Erstsemesterkurse im Wintersemester 2013/14)</li></a>
-<a href="./docs/Fragen.zip"><li class="zip">Transkription aller erhobenen Fragen (sortiert nach Kursen -  ZIP-Archiv)</li></a>
-</ul>
-<h2>Sprachverarbeitung</h2>
-<h3>Clustering</h3>
-<ul>
-<a href="./docs/clustering_auto.zip"><li class="py">Clustering-Skript und Resultate vom automatischen Clustern der transkribierten Fragen (Python, ZIP-Archiv)</li></a>
-</ul>
-<h3>Ersetzungswörterbücher</h3>
-<ul>
-<a href="./docs/01_dict.dict"><li class="txt">Wörterbuch, Ersetzungsphase 1 (Initiale Ersetzungen)</li></a>
-<a href="./docs/02_dict.dict"><li class="txt">Wörterbuch, Ersetzungsphase 2 (Feinersetzungen)</li></a>
-</ul>
-</div>
 
 <a href="index.php" id="back_to_chat">Zurück zum Chat</a>
 </body>

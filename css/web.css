@@ -41,17 +41,26 @@ body #navigation {
 
 	height:200px;
 	width:239px;
-	color:rgb(255,176,96);
-	font-size:1.0em;
+
 	margin: 150px auto auto 10px;
 
 	position:absolute;
 	top:10px;
 	left:5px;
-	
-
-
 }
+
+
+body #navigation ul a:visited{
+
+color:black;
+}
+
+body #navigation ul a:link{
+
+color:black;
+}
+
+
 body #navigation ul{
 
 
@@ -60,10 +69,11 @@ color:rgb(255,176,96);
 
 }
 
+
 body #navigation ul ul{
 
 color:rgb(255,176,96);
-	font-size:0.8em;
+font-size:0.8em;
 margin-left: -25px;
 
 
@@ -71,8 +81,8 @@ margin-left: -25px;
 }
 
 body #logo {
-	height:200px;
-	width:300px;
+	height:90px;
+	width:225px;
 	
 	position:absolute;
 	top:20px;
@@ -80,7 +90,7 @@ body #logo {
 	
 	background-image:url('img/logo.png');
 	background-repeat:no-repeat;
-	background-size: 75%;
+	background-size: 100%;
 
 
 }
@@ -150,6 +160,7 @@ body #content a {
 }
 
 
+	
 body #content ul {
 	
 	list-style-type: none;
@@ -165,6 +176,11 @@ body #content ul .pdf {
 	background-position:0px 4px;
 	line-height:40px;
 }
+
+body #content ul a:hover {
+		color:rgb(255,176,96);
+		 	}
+
 
 body #content ul .zip {
 	background:url('img/zip.png');
