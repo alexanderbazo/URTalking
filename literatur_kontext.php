@@ -42,10 +42,10 @@
 <h2>Chatbots in Bibliotheken</h2>
 <ul>
 <a href="http://www.ib.hu-berlin.de/~kumlau/handreichungen/h222/h222.pdf" target="_blank"><li class="link">Christensen, A. (2008). Virtuelle Auskunft mit Mehrwert: Chatbots in Bibliotheken. Berlin: Institut für Bibliotheks- und Informationswissenschaft der Humboldt-Universität.</li> </a>
-<a href="http://opus4.kobv.de/opus4-fhpotsdam/frontdoor/deliver/index/docId/175/file/Diplomarbeit_Eglmeier_Christian_DRS.pdf" target="_blank"><li class="link">Eglmeier, C. (2010). Digital Reference Service - Digitale Auskunftsdienste und ihre Einsatzmöglichkeiten in öffentlichen Bibliotheken. Fachhochschule Potsdam. (Diplomarbeit)</li><a>
+<a href="http://opus4.kobv.de/opus4-fhpotsdam/frontdoor/deliver/index/docId/175/file/Diplomarbeit_Eglmeier_Christian_DRS.pdf" target="_blank"><li class="link">Eglmeier, C. (2010). Digital Reference Service - Digitale Auskunftsdienste und ihre Einsatzmöglichkeiten in öffentlichen Bibliotheken (Diplomarbeit). Fachhochschule Potsdam.</li><a>
 <a href="https://kops.ub.uni-konstanz.de/xmlui/bitstream/handle/urn:nbn:de:bsz:352-opus-14614/Projektbericht.pdf?sequence=1" target="_blank"><li class="link">Krauss, G. (2005). Fragen Sie uns online! - Vergleich der Chatauskunft im deutschen Bibliothekswesen und Konzept zur Einführung dieser Dienstleistung an der Bibliothek der Universität Konstanz.</li> </a>
 <li class="text">Müllenbruck, S. (2001). „Sind Sie ein Mensch?“ Auskunft per Chat an der UB Trier. In: Buch und Bibliothek, 53, S.216-217.</li>
-<a href="http://opac.fh-burgenland.at/repository/diplomarbeiten/AC03472503.pdf" target="_blank"><li class="link">Putz, M. (2002). Wandel der Informationsvermittlung in wissenschaftlichen Bibliotheken: Möglichkeiten neuer Produkte und Dienstleistungen. Eisenstadt: Fachhochschul-Studiengang Informationsberufe. (Diplomarbeit)</li><a>
+<a href="http://opac.fh-burgenland.at/repository/diplomarbeiten/AC03472503.pdf" target="_blank"><li class="link">Putz, M. (2002). Wandel der Informationsvermittlung in wissenschaftlichen Bibliotheken: Möglichkeiten neuer Produkte und Dienstleistungen (Diplomarbeit). Eisenstadt: Fachhochschul-Studiengang Informationsberufe.</li><a>
 <li class="text">Schaefer-Rolffs, A. (2013). Hybride Bibliotheken: Navigatoren in der modernen Informationslandschaft. Berlin: Simon Verlag für Bibliothekswissen.</li>
 <li class="text">Tan, J. (2008). Second Life in Bibliotheken. Wiesbaden: Dinges & Frick.</li>
 <a href="http://www.opus-bayern.de/bib-info/volltexte/2008/441/pdf/Vortragausformuliert.pdf" target="_blank"><li class="link">Wolf, S. (2008). Chatten und chatten lassen oder warum sich der Einsatz eines Chatbots für eine Bibliothek lohnt.</li> </a>
@@ -68,7 +68,7 @@
 <li class="text">Keegan, M., Boyle, R.D., & Dee, H. M. (2012). Turi: chatbot software for schools in the Turing centenary. In: Proceedings of the 7th Workshop in Primary and Secondary Computing Education. New York: ACM.</li>
 <li class="text">Kerly, A., Hall, P., & Bull, S. (2006). Bringing chatbots into education: Towards natural language negotiation of open learner models. In: Proceedings of AI, S.179 – 192. </li>
 <li class="text">Knill, O., Carlsson, J., Chi, A., & Lezama, M. (2004). An artificial intelligence experiment in college math education. </li>
-<li class="text">Marino, M. C. (2006). I, Chatbot: The Gender and Race Performativity of Conversational Agents. Ph.D. Dissertation. Univ. of California, Riverside, USA. Advisor(s) Toby Miller.</li>
+<li class="text">Marino, M. C. (2006). I, Chatbot: The Gender and Race Performativity of Conversational Agents (Dissertation). Riverside, USA: Univ. of California.</li>
 <li class="text">Reed, K., & Meiselwitz, G. (2011). Teacher agents: the current state, future trends, and many roles of intelligent agents in education. In: Online Communities and Social Computing, S.69-78. Berlin Heidelberg: Springer.</li>
 <li class="text">Shaw, A. (2011). Using a Collaborative Programming Methodology to Incorporate Social Computing Projects into Introductory Computer Science Courses. In: Information Technology: New Generations, 2011 Eighth International Conference on (pp. 7-11). IEEE. </li>
 <a href="http://dspace.ou.nl/bitstream/1820/4308/1/ECGBL2012-chatbot-project-v11062012.pdf" target="_blank"><li class="link">van Rosmalen, P., Eikelboom, J., Bloemers, E., van Winzum, K., & Spronck, P. (2012). Towards a Game-Chatbot: Extending the Interaction in Serious Games. In: 6th European Conference on Games Based Learning, Cork, Ireland. </li> </a>
@@ -76,7 +76,7 @@
 
 <h2>Chatbots und Emotion</h2>
 <ul>
-<li class="text">Tatai, G., Csordás, A., Szaló, A., & Laufer, L. (2003). The Chatbot Feeling–Towards Animated Emotional ECAs. In: Progress in Artificial Intelligence, S.336-340. Berlin Heidelberg: Springer.</li>
+<li class="text">Tatai, G., Csordás, A., Szaló, A., & Laufer, L. (2003). The Chatbot Feeling–Towards Animated Emotional ECAs. In: Progress in Artificial Intelligence, S.336-340. Berlin: Springer.</li>
 <li class="text">Vetter, M. (2001). Softbots. Es menschelt im Netz. PC Professional, 11.</li>
 <li class="text">Christaller, T. (2002). Roboter mit Selbsterkenntnis? Interview in Gehirn & Geist 1, S.54-55. </li>
 </ul>

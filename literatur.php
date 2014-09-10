@@ -84,7 +84,7 @@
 <li class="text">Kopp, S., Jung, B., Lessmann, N., & Wachsmuth, I. (2003). Max - a multimodal assistant in virtual reality construction. In: Künstliche Intelligenz, 4(03), S. 11 – 17.</li>
 <li class="text">Pfeiffer, T., Liguda, C., Wachsmuth, I., & Stein, S. (2011). Living with a virtual agent: Seven years with an embodied conversational agent at the Heinz Nixdorf Museums Forum. Proceedings of the Re-Thinking Technology in Museums.</li>
 <a href="https://www.sub.uni-hamburg.de/bibliotheken/projekte/chatbot-stella.html" target="_blank"><li class="link">Stella – SUB Hamburg: Veröffentlichungen. </li> </a>
-<li class="text">Weiss, S., Müller, W., Spierling, U., & Steimle, F. (2005). Scenejo – an interactive storytelling platform. In: Virtual Storytelling. Using Virtual Reality Technologies for Storytelling, S.77-80. Berlin Heidelberg: Springer .</li>
+<li class="text">Weiss, S., Müller, W., Spierling, U., & Steimle, F. (2005). Scenejo – an interactive storytelling platform. In: Virtual Storytelling. Using Virtual Reality Technologies for Storytelling, S.77-80. Berlin: Springer .</li>
 </ul>
 
 <h2>Entwicklung</h2>
@@ -98,8 +98,8 @@
 <li class="text">Abu Shawar, B. (2011). A Corpus Based Approach to Generalising a Chatbot System: Applying Simple Natural Language Processing Techniques to Build Knowledge Base of ALICE Chatbot System. LAP Lambert Academic Publishing. </li>
 <li class="text">Gianvecchio, S., Xie, M., Wu, Z., & Wang, H. (2011). Humans and bots in internet chat: measurement, analysis, and automated classification. IEEE/ACM Transactions on Networking, 19(5), S.1557-1571.</li>
 <a href="http://link.springer.com/chapter/10.1007/978-3-540-73110-8_9" target="_blank"><li class="link">Jenkins, M.-C., Churchill, R., Cox, S., & Smith, D. (2007). Analysis of user interaction with service oriented chatbot systems. In Proceedings of the 12th international conference on Human-computer interaction: intelligent multimodal interaction environments, Julie A. Jacko (Ed.), S.76-83. Berlin Heidelberg: Springer.</li> </a>
-<li class="text">Lindner, C. (2003). Wer braucht wofür Avatare? Konzeption und Implementierung natürlichsprachlicher Systeme—Zur Einführung. In: Avatare, S.3-24. Berlin, Heidelberg: Springer. </li>
-<li class="text">Morrissey, K., & Kirakowski, J. (2013). ‘Realness’ in Chatbots: Establishing Quantifiable Criteria. In: Human-Computer Interaction. Interaction Modalities and Techniques, S.87-96. Berlin Heidelberg: Springer.</li>
+<li class="text">Lindner, C. (2003). Wer braucht wofür Avatare? Konzeption und Implementierung natürlichsprachlicher Systeme—Zur Einführung. In: Avatare, S.3-24. Berlin: Springer.</li>
+<li class="text">Morrissey, K., & Kirakowski, J. (2013). ‘Realness’ in Chatbots: Establishing Quantifiable Criteria. In: Human-Computer Interaction. Interaction Modalities and Techniques, S.87-96. Berlin: Springer.</li>
 <li class="text">Schumaker, R. P., Ginsburg, M., Chen, H., & Liu, Y. (2007). An evaluation of the chat and knowledge delivery components of a low-level dialog system: The AZ-ALICE experiment. Decision Support Systems, 42(2), S.2236–2246.</li>
 <li class="text">Shawar, B. A., & Atwell, E. (2002). A comparison between ALICE and Elizabeth chatbot systems. Technical Report 2002.19, School of Computing, University of Leeds.</li>
 <li class="text">Tatai, G., Csordas, A., Kiss, A., Szalo, A., & Laufer, L. (2003). Happy chatbot, happy user. In: Proceedings of the 4th International Working Conference on Intelligent Virtual Agents, S.5–12. Irsee (Deutschland).</li>
@@ -107,7 +107,7 @@
 
 <h2>Qualitätsstandards</h2>
 <ul>
-<li class="text">Vetter, M. (2003): „Ich habe Ihre Eingabe leider nicht verstanden“ – Qualitätskriterien für Online-Tests von Bots. In: Avatare: Digitale Sprecher für Business und Marketing. Lindner, Christian (Hrsg.). Berlin: Springer, 2003. S.71-92.</li>
+<li class="text">Vetter, M. (2003). „Ich habe Ihre Eingabe leider nicht verstanden“ – Qualitätskriterien für Online-Tests von Bots. In: Avatare: Digitale Sprecher für Business und Marketing. Lindner, Christian (Hrsg.). Berlin: Springer, 2003. S.71-92.</li>
 </ul>
 
 

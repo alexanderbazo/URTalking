@@ -17,7 +17,7 @@
 
 		<ul>
 			<li><a href="./documentation.php">Seminararbeiten</a></li>
-			<li><a href="./documentation_software.php">Software</a></li>
+			<li><a href="./documentation_software.php">Software-Komponenten</a></li>
 		</ul>
 		<br>
 				<li><a href="./chatbots.php">Chatbot-Übersicht</a></li>

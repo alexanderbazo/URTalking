@@ -90,7 +90,7 @@
 <a href="https://www.ub.uni-koeln.de/res/albot/index_ger.html/" target="_blank"><li class="link"></li>Ascademicus - Universitätsbibliothek Dortmund</a>
 <a href="http://www.duesseldorf.de/stadtbuechereien/information/emma.shtml" target="_blank"><li class="link"></li>Emma - Stadtbüchereien Düsseldorf</a>
 <a href="http://www.buecherhallen.de/ina/" target="_blank"><li class="link"></li>INA - Bücherhallen Hamburg</a>
-<a href=""><li class="link"></li>I-Punkt - Sächsisches Bibliotheksportal</a>
+<li class="text">I-Punkt - Sächsisches Bibliotheksportal</li>
 <a href="http://www.kornhausbibliotheken.ch/Service/ChatbotKornelia.aspx" target="_blank"><li class="link"></li>Kornelia - Kornhausbibliotheken Bern</a>
 <a href="http://www.sub.uni-hamburg.de/home.html/" target="_blank"><li class="link"></li>Stella - Staats- und Universitätsbibliothek Hamburg</a>
 </ul> 
