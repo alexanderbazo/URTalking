@@ -73,7 +73,7 @@
 
 <h3>Deutschsprachige Chatbots</h3>
 <ul>
-<a href="www.boettgerberg.de/Neunmalklug.zip" target="_blank"><li class="link"></li>Neumalklug</a>
+<a href="http://www.chatbots.org/chatbot/neunmalklug2/" target="_blank"><li class="link"></li>Neumalklug</a>
 <a href="http://www.congstar.de/hilfe-service/?zxid=1579825254208189440&zuserid=134386" target="_blank"><li class="link"></li>Sophie</a>
 <a href="https://www.elster.de/nmIQ/avatar_faq.jsp" target="_blank"><li class="link"></li>Elias</a>
 <a href="http://bot.daad.de/luziecgi-bin/luzie.cgi" target="_blank"><li class="link"></li>Luzie</a>
