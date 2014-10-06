@@ -30,11 +30,9 @@
 		</div>
 
 		<h1><span class="sub">#</span>Elise<span class="sub">: 
-			<span class="highlight">E</span>lectronic
-			<span class="highlight">L</span>inguistic 
-			<span class="highlight">I</span>nformation
-			<span class="highlight">S</span>ystem for 
-			<span class="highlight">E</span>nrollees
+			<span class="highlight">El</span>ektronisches
+			<span class="highlight">I</span>nformation<span class="highlight">s</span>ystem für  
+			<span class="highlight">E</span>rstsemester
 			</span>
 		</h1>
 			
